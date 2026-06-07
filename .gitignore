@@ -1,0 +1,22 @@
+# Composer dependencies — install via `composer install` after cloning
+/vendor/
+
+# OS & editor artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# WordPress upload artifacts generated at runtime
+/assets/uploads/
+
+# Node (if any build tools added later)
+node_modules/
+npm-debug.log*
+
+# Environment / secrets — never commit these
+.env
+*.env.local

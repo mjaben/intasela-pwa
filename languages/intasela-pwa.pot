@@ -1,0 +1,2910 @@
+# Copyright (C) 2026 DaftPlug
+# This file is distributed under the GPLv3.
+msgid ""
+msgstr ""
+"Project-Id-Version: Intasela PWA 1.3.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/intasela-pwa\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-05-24T20:13:49+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+
+#. Plugin Name of the plugin
+#: intasela-pwa.php
+msgid "Intasela PWA"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: intasela-pwa.php
+msgid "https://daftplug.com/intasela-pwa/"
+msgstr ""
+
+#. Description of the plugin
+#: intasela-pwa.php
+msgid "Empower your website with Progressive Web App (PWA) features and give it a true app-like experience with install prompts, offline access, push notifications, advanced UI components, powerful web capabilities, detailed analytics, & more."
+msgstr ""
+
+#. Author of the plugin
+#: intasela-pwa.php
+msgid "DaftPlug"
+msgstr ""
+
+#. Author URI of the plugin
+#: intasela-pwa.php
+msgid "https://daftplug.com/"
+msgstr ""
+
+#: includes/admin/classes/Notices.php:92
+msgid "Enjoying Intasela PWA?"
+msgstr ""
+
+#: includes/admin/classes/Notices.php:93
+msgid "If Intasela PWA has been helpful, please take a moment to leave a 5-star review on WordPress.org. It takes less than a minute and helps a lot!"
+msgstr ""
+
+#: includes/admin/classes/Notices.php:95
+msgid "Leave a 5-star review ⭐"
+msgstr ""
+
+#: includes/admin/classes/Notices.php:96
+msgid "Maybe later"
+msgstr ""
+
+#: includes/admin/classes/Notices.php:113
+msgid "Unlock the full power of Intasela PWA"
+msgstr ""
+
+#: includes/admin/classes/Notices.php:114
+msgid "Upgrade to Intasela PWA Pro to unlock advanced features, priority support and other All-in-One Pro plugins from us without extra cost."
+msgstr ""
+
+#: includes/admin/classes/Notices.php:116
+#: includes/admin/classes/UI.php:161
+#: includes/admin/views/overview.php:66
+#: includes/admin/views/overview.php:243
+#: includes/admin/views/overview.php:519
+msgid "Upgrade to Pro 🚀"
+msgstr ""
+
+#: includes/admin/classes/Notices.php:117
+#: assets/js/pushPrompt__premium_only.js:263
+msgid "Dismiss"
+msgstr ""
+
+#: includes/admin/classes/UI.php:164
+msgid "Settings"
+msgstr ""
+
+#: includes/admin/views/overview.php:16
+msgid "Active PWA Users"
+msgstr ""
+
+#: includes/admin/views/overview.php:24
+msgid "Number of users who installed your web app and are actively using it as PWA."
+msgstr ""
+
+#: includes/admin/views/overview.php:63
+msgid "Upgrade to Pro to get detailed analytics on browser usage, device distribution, user engagement patterns and other advanced insights on your PWA users."
+msgstr ""
+
+#: includes/admin/views/overview.php:86
+msgid "Support All Platforms"
+msgstr ""
+
+#: includes/admin/views/overview.php:93
+msgid "The feature controls whether all platforms are supported by the PWA features. If turned off, PWA and plugin features will only apply to selected platforms."
+msgstr ""
+
+#: includes/admin/views/overview.php:98
+msgid "Enable PWA and plugin features for all platforms."
+msgstr ""
+
+#: includes/admin/views/overview.php:115
+msgid "Supported Platforms"
+msgstr ""
+
+#: includes/admin/views/overview.php:122
+msgid "Select platform types that will support plugin features."
+msgstr ""
+
+#: includes/admin/views/overview.php:127
+msgid "Select Supported Platforms"
+msgstr ""
+
+#: includes/admin/views/overview.php:131
+msgid "Mobile Browsers"
+msgstr ""
+
+#: includes/admin/views/overview.php:135
+msgid "Desktop Browsers"
+msgstr ""
+
+#: includes/admin/views/overview.php:139
+msgid "Installed PWAs"
+msgstr ""
+
+#: includes/admin/views/overview.php:151
+msgid "PWA Scorecard"
+msgstr ""
+
+#: includes/admin/views/overview.php:159
+msgid "The scorecard shows the status and overall condition of your PWA setup. Your goal should be to resolve all action items and achieve an excellent score."
+msgstr ""
+
+#: includes/admin/views/overview.php:186
+msgid "Bad"
+msgstr ""
+
+#: includes/admin/views/overview.php:192
+msgid "Average"
+msgstr ""
+
+#: includes/admin/views/overview.php:198
+msgid "Good"
+msgstr ""
+
+#: includes/admin/views/overview.php:204
+msgid "Excellent"
+msgstr ""
+
+#: includes/admin/views/overview.php:240
+msgid "Upgrade to Pro to get Android and iOS apps and unlock precise action items that directly improve your PWA score and help your web app feel truly app-like."
+msgstr ""
+
+#: includes/admin/views/overview.php:255
+msgid "Push Notifications Subscribers"
+msgstr ""
+
+#: includes/admin/views/overview.php:258
+msgid "List of your users who are subscribed for push notifications."
+msgstr ""
+
+#: includes/admin/views/overview.php:266
+#: includes/admin/views/overview.php:482
+msgid "Send Push Notification"
+msgstr ""
+
+#: includes/admin/views/overview.php:275
+msgid "Country"
+msgstr ""
+
+#: includes/admin/views/overview.php:282
+msgid "Operating System"
+msgstr ""
+
+#: includes/admin/views/overview.php:289
+msgid "Browser"
+msgstr ""
+
+#: includes/admin/views/overview.php:296
+msgid "Date"
+msgstr ""
+
+#: includes/admin/views/overview.php:303
+msgid "Actions"
+msgstr ""
+
+#: includes/admin/views/overview.php:453
+msgid "Total:"
+msgstr ""
+
+#: includes/admin/views/overview.php:462
+msgid "Prev"
+msgstr ""
+
+#: includes/admin/views/overview.php:465
+msgid "Next"
+msgstr ""
+
+#: includes/admin/views/overview.php:491
+msgid "The push notification will be sent to all of your subscribers."
+msgstr ""
+
+#: includes/admin/views/overview.php:516
+msgid "Upgrade to Pro to unlock notification badging that shows unopened notifications on users’ home screens, just like a native mobile app."
+msgstr ""
+
+#: includes/admin/views/overview.php:527
+#: includes/admin/views/overview.php:555
+msgid "Notification Image"
+msgstr ""
+
+#: includes/admin/views/overview.php:534
+msgid "Adds a large image to notification."
+msgstr ""
+
+#: includes/admin/views/overview.php:548
+msgid "Click to select an image"
+msgstr ""
+
+#: includes/admin/views/overview.php:551
+msgid "Select an image to display in your notification."
+msgstr ""
+
+#: includes/admin/views/overview.php:570
+msgid "Notification Title"
+msgstr ""
+
+#: includes/admin/views/overview.php:577
+msgid "Enter the title of your notification."
+msgstr ""
+
+#: includes/admin/views/overview.php:581
+msgid "Enter Notification Title"
+msgstr ""
+
+#: includes/admin/views/overview.php:585
+msgid "Notification Message"
+msgstr ""
+
+#: includes/admin/views/overview.php:592
+msgid "Enter the message of your notification."
+msgstr ""
+
+#: includes/admin/views/overview.php:596
+msgid "Enter Notification Message"
+msgstr ""
+
+#: includes/admin/views/overview.php:600
+msgid "Notification URL"
+msgstr ""
+
+#: includes/admin/views/overview.php:607
+msgid "Enter the URL of your notification. Your users will be redirected to this URL after they click on your notification."
+msgstr ""
+
+#: includes/admin/views/overview.php:611
+msgid "Enter Notification URL"
+msgstr ""
+
+#: includes/admin/views/overview.php:616
+msgid "Action Buttons"
+msgstr ""
+
+#: includes/admin/views/overview.php:623
+msgid "Adds action buttons to your notification. You can add up to two action buttons per notification. However, not all browsers support action buttons, so they will only be displayed for users with compatible browsers."
+msgstr ""
+
+#: includes/admin/views/overview.php:630
+msgid "Enter Action Button Text"
+msgstr ""
+
+#: includes/admin/views/overview.php:633
+msgid "Enter Action Button URL"
+msgstr ""
+
+#: includes/admin/views/overview.php:636
+msgid "Delete Action Button"
+msgstr ""
+
+#: includes/admin/views/overview.php:656
+msgid "Add Action Button"
+msgstr ""
+
+#: includes/admin/views/overview.php:665
+msgid "Vibration"
+msgstr ""
+
+#: includes/admin/views/overview.php:672
+msgid "Allows notification to vibrate the user's device as soon as it's delivered. This will only work on the mobile and tablet devices as desktop devices do not have vibrations."
+msgstr ""
+
+#: includes/admin/views/overview.php:677
+msgid "If enabled, your notification will vibrate the user's device upon delivery."
+msgstr ""
+
+#: includes/admin/views/overview.php:692
+msgid "Persistent"
+msgstr ""
+
+#: includes/admin/views/overview.php:699
+msgid "Your notification will not hide automatically after some time and it will require user interaction to be dismissed."
+msgstr ""
+
+#: includes/admin/views/overview.php:704
+msgid "If enabled, the notification will remain visible until the user interacts with it."
+msgstr ""
+
+#: includes/admin/views/overview.php:717
+msgid "Preview"
+msgstr ""
+
+#: includes/admin/views/overview.php:721
+msgid "Sending..."
+msgstr ""
+
+#: includes/admin/views/overview.php:723
+msgid "Send Notification"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:21
+msgid "Navigation Flow"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:24
+msgid "Features that improve how users move through the app and experience transitions between pages."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:35
+msgid "Smooth Page Transitions"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:42
+msgid "Smooth Page Transitions feature offers a native app-like experience by loading pages with fade transitions."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:47
+msgid "Smoothly load pages with fade transitions."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:75
+msgid "Data Safety"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:78
+msgid "Features that protect user input and prevent accidental data loss."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:89
+msgid "Autosave Forms"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:96
+msgid "The Autosave Forms feature saves users’ form entries before submission, preserving data if they refresh the page or return later."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:101
+msgid "Autosave users’ form entries before submission."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:119
+msgid "Persist on Submit"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:126
+msgid "Saves and preserves filled out form values even after the form is submitted."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:135
+msgid "Persist form values even after the form is submitted."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:145
+msgid "Persistent Storage"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:152
+msgid "Persistent storage allows your web app to request persistent storage, ensuring that important data is reliably stored on the user's device without being automatically cleared, even under storage pressure. It can help protect critical data from eviction, and reduce the chance of data loss."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:156
+msgid "Mark cached website content as persistent to prevent deletion."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:170
+msgid "Content Indexing"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:177
+msgid "Content Indexing allows web applications to add URLs and metadata of offline-capable pages to a local index maintained by the browser. This improves the offline experience and discoverability of already-cached pages by enabling the browser to surface those pages when users are likely to want to view them. These pages could also be used to improve on-device search and augment browsing history."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:182
+msgid "Add URLs of offline-capable pages to a local index maintained by the browser."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:206
+msgid "System Integration"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:209
+msgid "Features that allow your app to interact directly with operating system services and other apps."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:219
+msgid "URL Protocol Handler"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:226
+msgid "URL Protocol Handler lets PWAs open specific protocol links for a smooth experience. When registered, the PWA opens on clicking a link with the set scheme and receives the URL."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:231
+msgid "Let your PWA open specific protocol links for a smooth experience."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:247
+msgid "Protocol"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:258
+msgid "Enter Protocol"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:262
+msgid "URL"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:273
+#: includes/admin/views/settings-ui-components.php:515
+#: includes/admin/views/settings-ui-components.php:554
+msgid "Enter URL"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:282
+msgid "File Handler"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:289
+msgid "File Handler lets your web app register to receive files from other sites or apps through a file URL scheme, useful for processing files or documents."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:294
+msgid "Let your web app receive files from other sites or apps."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:312
+msgid "File Action"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:319
+msgid "Enter the action of your web app. File action is a URL or your file URL scheme that your web app will open to when handling the given file."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:323
+#: includes/admin/views/settings-app-capabilities.php:407
+msgid "Enter Action"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:328
+msgid "File Types"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:335
+msgid "Select the file MIME types that your web app can handle using above file action."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:340
+msgid "Select File Types"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:344
+msgid "Image/PNG"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:345
+msgid "Image/JPEG"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:346
+msgid "Image/GIF"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:347
+msgid "Image/WebP"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:348
+msgid "Audio/MP3"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:349
+msgid "Audio/MP4"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:350
+msgid "Audio/OGG"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:351
+msgid "Audio/WAV"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:352
+msgid "Video/MP4"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:353
+msgid "Video/WebM"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:354
+msgid "Text/CSV"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:355
+msgid "Application/XML"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:356
+msgid "Application/JSON"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:357
+msgid "Application/PDF"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:358
+msgid "Application/ZIP"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:368
+msgid "Web Share Target"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:375
+msgid "Web Share Target adds a system share picker and lets your web app register to receive shared data from other sites or apps through a share URL scheme, ideal for social networking apps."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:380
+msgid "Let your web app receive shared data from other sites or apps."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:396
+msgid "Share Action"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:411
+msgid "URL Query"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:422
+msgid "Enter URL Query"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:439
+msgid "Device Feedback"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:442
+msgid "Features that provide physical or sensory feedback to user interactions on supported devices."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:453
+msgid "Vibrations"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:460
+msgid "Vibrations create feedback on taps for mobile users, helping them sense when they tap or click on your site."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:465
+msgid "Provide haptic feedback on taps for mobile users."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:488
+msgid "Activity Awareness"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:491
+msgid "Features that allow your app to manage screen behavior, detect and respond to changes in user activity or attention."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:501
+msgid "Idle Detection"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:508
+msgid "Idle Detection alerts your site when a user is inactive, like no input, screensaver activation, screen lock, or switching screens. When enabled, it can prompt users to update content after idle is detected."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:513
+msgid "Detect when users are inactive and prompt to refresh content."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:529
+msgid "Threshold"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:536
+msgid "Choose how many minutes to wait until the user is considered idle."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:540
+msgid "Enter Threshold"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:549
+msgid "Screen Wake Lock"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:556
+msgid "Screen wake lock stops the device from dimming or locking the screen while your web app runs, allowing experiences that once needed platform-specific apps."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:561
+msgid "Stops the device from dimming or locking the screen."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:587
+msgid "Background Processing"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:590
+msgid "Features that allow your app to run tasks and sync data outside of active user sessions."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:601
+msgid "Background Sync"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:608
+msgid "Background sync lets you defer actions until the user has stable connectivity. This ensures that crucial requests made while your web app is offline can be replayed when the user comes back online."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:613
+msgid "Defer actions and requests until the user has stable connectivity."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:630
+msgid "Periodic Background Sync"
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:637
+msgid "Periodic Background Sync enables web applications to periodically synchronize data in the background, bringing web apps closer to the behavior of a platform-specific app. It lets your website to always show fresh content in PWA by downloading data in the background when the app or page is not being used."
+msgstr ""
+
+#: includes/admin/views/settings-app-capabilities.php:643
+msgid "Periodically sync data in the background to always show fresh content in PWA."
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:23
+msgid "Installation Prompts"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:26
+msgid "Installation prompts help users add your web app to their home screens with a click on install buttons, appearing in key spots to boost installation chances."
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:35
+msgid "Installation Overlays"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:42
+msgid "Enable installation overlays to display to users, such as a banner, menu, feed, blog, or snackbar, to encourage them to add your web app to their home screens. Try not to enable them all to avoid spamming users with the installation banners."
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:54
+msgid "Banner"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:60
+#: includes/admin/views/settings-installation.php:83
+#: includes/admin/views/settings-installation.php:107
+#: includes/admin/views/settings-installation.php:132
+#: includes/admin/views/settings-installation.php:156
+#: includes/admin/views/settings-installation.php:182
+msgid "Edit"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:75
+msgid "Snackbar"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:99
+msgid "Menu"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:124
+msgid "Feed"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:148
+msgid "Blog"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:174
+msgid "Checkout"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:193
+msgid "Installation Page"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:200
+msgid "Installation Page is a dedicated page which features your web app as an app store installation page with your app icon, name, screenshots and information. You can share this page with others to encourage them to install your web app."
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:216
+#: includes/admin/views/settings-installation.php:247
+#: includes/admin/views/settings-installation.php:278
+#: assets/js/installPrompt.js:443
+msgid "Copied"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:224
+msgid "Installation Button"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:231
+msgid "Installation button is a customizable button that can be placed anywhere on your site using a shortcode. When clicked, it triggers an installation prompt, allowing users to easily add your web app to their home screens. You can insert an installation button anywhere on your website using the shortcode below."
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:255
+msgid "Installation URL"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:262
+msgid "Installation URL is a link to the homepage of your web app with an additional parameter to trigger the installation prompt as soon as the user lands on your website. You can share this URL with your users who wants to install your web app or use it in your marketing materials, like buttons on your website, social media posts, or emails."
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:286
+#: includes/admin/views/settings-installation.php:299
+msgid "Installation QR Code"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:293
+msgid "This QR code directs users to your homepage, where they can access the installation prompt and set up your PWA effortlessly."
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:306
+msgid "Download Image"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:314
+msgid "Text"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:321
+msgid "Set the text to display as the title on installation prompts and as the label on the installation button. "
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:325
+msgid "Enter Text"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:329
+#: includes/admin/views/settings-push-notifications.php:80
+msgid "Timeout"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:336
+msgid "Choose how many days to wait to show installation overlays again if they were dismissed."
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:340
+#: includes/admin/views/settings-push-notifications.php:91
+msgid "Enter Timeout"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:350
+msgid "Edit Banner"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:363
+#: includes/admin/views/settings-installation.php:390
+#: includes/admin/views/settings-installation.php:416
+#: includes/admin/views/settings-installation.php:442
+#: includes/admin/views/settings-installation.php:469
+msgid "Message"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:365
+msgid "Enter Banner Message"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:377
+msgid "Edit Snackbar"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:392
+msgid "Enter Snackbar Message"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:403
+msgid "Edit Menu"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:418
+msgid "Enter Menu Message"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:429
+msgid "Edit Feed"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:444
+msgid "Enter Feed Message"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:456
+msgid "Edit Checkout"
+msgstr ""
+
+#: includes/admin/views/settings-installation.php:471
+msgid "Enter Checkout Message"
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:22
+msgid "Offline Cache"
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:25
+msgid "Configure offline caching settings, including the fallback page, caching strategy, and cache expiry time, to ensure seamless offline functionality."
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:37
+msgid "Custom Offline Fallback Page"
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:44
+msgid "Enable this if you want to select the special offline fallback page for your web application, instead of using default one. This page will show up your users when they navigate your website without an internet connection and the requested page won't be in cache."
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:49
+msgid "Select a custom offline fallback page instead of default one."
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:68
+msgid "Offline Fallback Page"
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:75
+msgid "Select a custom offline fallback page."
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:81
+#: includes/admin/views/settings-web-app-manifest.php:286
+#: includes/admin/views/settings-web-app-manifest.php:647
+#: includes/admin/views/settings-web-app-manifest.php:695
+msgid "Enter Path"
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:90
+msgid "Caching Strategy"
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:97
+msgid "All network requests are cached by Intasela PWA, so that your website can serve content from the browser cache if available and display requested content as fast as possible. Here you are able to manually change the caching strategy for some request types. We recommend you to set it on Network First for always showing latest version of your website while updating the cache in the background and serving the last cached response when the network request fails."
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:102
+msgid "Select Caching Strategy"
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:109
+msgid "Fetches from the network first and caches the response. Uses the last cached response if the network request fails."
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:110
+msgid "Network-First"
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:115
+msgid "Uses a cached response if available and updates the cache in the background. Always requests an asset from the network, using bandwidth."
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:116
+msgid "Stale While Revalidate"
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:121
+msgid "Uses a cached response first. If unavailable, fetches from the network and caches the response."
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:122
+msgid "Cache-First"
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:127
+msgid "Does not cache anything. Always uses the network and passes the response to the browser."
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:128
+msgid "Network-Only"
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:133
+msgid "Always uses a pre-populated cached response, never requesting from the network. Updates only when cache settings change or cache expires."
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:134
+msgid "Cache-Only"
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:140
+msgid "Cache Expiration Time"
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:147
+msgid "Define how many days should cached content be remained in the browser cache storage. We recommend you to leave it on default as browser cache is updated automatically if your caching strategy is StaleWhileRevalidate but if you are using CacheFirst strategy, then lower expiration times might be a right choice."
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:151
+msgid "Enter Cache Expiration Time"
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:175
+msgid "Offline Capabilities"
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:178
+msgid "Improve your web app's offline use with features like offline forms and notifications to ensure a smooth experience without internet."
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:190
+msgid "Offline Notification"
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:197
+msgid "A live reconnecting notification for your users when they go offline or their connection interrupts on your website."
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:202
+msgid "Display a live reconnecting notification if connection interrupts."
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:220
+msgid "Offline Forms"
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:227
+msgid "Allow users to submit forms offline with their consent. Submissions are saved locally and processed automatically when they reconnect to the internet."
+msgstr ""
+
+#: includes/admin/views/settings-offline-usage.php:232
+msgid "Allow users to submit forms offline and process when reconnected."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:21
+msgid "Subscription Controls"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:24
+msgid "Controls how users are invited to enable push notifications and manage their subscription."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:35
+msgid "Notification Prompt"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:42
+msgid "The push notifications prompt is nice simple prompt with your website logo and a message that will ask your users to subscribe push notifications on your website."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:47
+msgid "Prompts users with a notification to enable push notifications on your website."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:65
+msgid "Prompt Message"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:72
+msgid "Enter the message you want to show your users on push prompt."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:76
+msgid "Enter Message"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:87
+msgid "Choose how many days to wait to show push notification prompt again if it was dismissed."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:99
+msgid "Notification Button"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:106
+msgid "Push notifications button is a custom subscribe button on your site that boosts opt-in rate and lets users control when to subscribe or unsubscribe."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:111
+msgid "Adds a floating notification subscription button with bell icon."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:127
+#: includes/admin/views/settings-ui-components.php:1052
+msgid "Button Position"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:134
+msgid "Select position of your push notifications button on your website."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:139
+#: includes/admin/views/settings-ui-components.php:1064
+msgid "Select Button Position"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:141
+#: includes/admin/views/settings-ui-components.php:1066
+msgid "Bottom Right"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:142
+#: includes/admin/views/settings-ui-components.php:1067
+msgid "Bottom Left"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:143
+#: includes/admin/views/settings-ui-components.php:1068
+msgid "Top Right"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:144
+#: includes/admin/views/settings-ui-components.php:1069
+msgid "Top Left"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:149
+msgid "Button Behavior"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:156
+msgid "Select behavior of your push notifications button after users subscribe for push notifications."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:161
+msgid "Select Button Behavior"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:168
+msgid "Keep shown after user subscribes for notifications, allowing them to unsubscribe by clicking on the button again."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:169
+msgid "Keep Shown After Subscription"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:174
+msgid "Hide after user subscribes for notifications. Users will still be able to unsubscribe from browser settings."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:175
+msgid "Hide After Subscription"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:182
+#: includes/admin/views/settings-ui-components.php:62
+msgid "Logged In Users Only"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:189
+msgid "This option restricts the visibility of subscription controls to logged in users only. This is particularly useful for membership sites or platforms where notifications are relevant only to authenticated users."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:196
+msgid "Show subscription controls for logged in users only."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:212
+msgid "Automated Notifications"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:215
+msgid "Automation sends predefined push notifications automatically on events like new post publishing to re-engage users and boost conversion."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:225
+msgid "Welcome Notification"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:232
+msgid "Sends automatic notification to subscribers as soon as they subscribe and welcomes them with a warm message."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:237
+msgid "Sends welcome notification to subscribers as soon as they subscribe."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:252
+msgid "New Content"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:259
+msgid "Sends automatic notification to website users when new content is published. Notification will include content title, text and featured image."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:264
+msgid "Sends notification to users when new content is published."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:283
+msgid "Post Types"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:290
+msgid "Select supported post types for new content published notification."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:295
+msgid "Select Post Types"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:311
+msgid "New Comment"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:318
+msgid "Sends automatic notification to users when a new comment or reply is posted where they have commented. Note that it will only work if you have enabled native WordPress comments on posts."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:323
+msgid "Notifies users of new comments or replies on threads they've participated in."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:342
+msgid "WooCommerce Price Drop"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:349
+msgid "Sends automatic notification to website users when the product price drops. Notification will include product title and featured image."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:354
+msgid "Sends notification to users when the product price drops."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:371
+msgid "WooCommerce Sale Price"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:378
+msgid "Sends automatic notification to website users when the sale price is added to the product. Notification will include product title and featured image."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:383
+msgid "Sends notification to users when sale price is added to product."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:400
+msgid "WooCommerce Back In Stock"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:407
+msgid "Sends automatic notification to website users when the product is back in stock. Notification will include product title and featured image."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:412
+msgid "Sends notification to users when product is back in stock."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:429
+msgid "WooCommerce Order Status Update"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:436
+msgid "Sends automatic notification to website users when the order status is updated. Notification will include what status change details."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:441
+msgid "Sends notification to users when the order status is updated."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:458
+msgid "WooCommerce New Order"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:465
+msgid "Sends automatic notification to admins when new order is placed. Notification will include order details."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:470
+msgid "Sends notification to admins when new order is placed."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:487
+msgid "WooCommerce Low Stock"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:494
+msgid "Sends automatic notification to admins when a product is low in stock. Notification will include product details."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:499
+msgid "Sends notification to admins when a product is low in stock."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:518
+msgid "BuddyPress Member Mention"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:525
+msgid "Sends automatic notification to users when a member mentions someone in an update @username."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:530
+msgid "Sends notification to users when they are mentioned by a member."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:547
+msgid "BuddyPress Member Reply"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:554
+msgid "Sends automatic notification to users when a member replies to an update or comment."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:559
+msgid "Sends notification to users when a member replies."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:576
+msgid "BuddyPress New Message"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:583
+msgid "Sends automatic notification to users when a new message is received in their DMs."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:588
+msgid "Sends notification to users when a new message is received."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:605
+msgid "BuddyPress Friend Request"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:612
+msgid "Sends automatic notification to users when a new friend request is received."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:617
+msgid "Sends notification to users when a new friend request is received."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:634
+msgid "BuddyPress Friend Accepted"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:641
+msgid "Sends automatic notification to users when the friend request is accepted."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:646
+msgid "Sends notification to users when the friend request is accepted."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:665
+msgid "FluentCommunity New Post"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:672
+msgid "Sends automatic notification to space members when a new post is created."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:677
+msgid "Sends notification to space members when a new post is created."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:694
+msgid "FluentCommunity New Comment"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:701
+msgid "Sends automatic notification to space members when a new comment is added on a post."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:706
+msgid "Sends notification to space members when a new comment is posted."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:741
+msgid "Server Configuration"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:744
+msgid "Configure your self-hosted notifications service to optimize performance and manage server resources."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:752
+msgid "Time To Live (TTL)"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:759
+msgid "Time To Live (TTL, in seconds) is how long a push message is retained by the push service (eg. Mozilla) in case the user's browser is not yet accessible (eg. is not connected). You may want to use a very long time for important notifications. The default TTL is 4 weeks. However, if you send multiple nonessential notifications, set a TTL of 0: the push notification will be delivered only if the user is currently connected. In other cases, you should use a minimum of one day if your users have multiple time zones, and if they don't several hours will suffice."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:763
+msgid "Enter Time To Live"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:767
+msgid "Batch Size"
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:774
+msgid "If you send a lot of notifications at a time, you may get memory overflows. In order to fix this, Intasela PWA sends notifications in batches. The default size is 1000. Depending on your server configuration (memory), you may want to decrease this number. Higher values require a longer script execution time."
+msgstr ""
+
+#: includes/admin/views/settings-push-notifications.php:778
+msgid "Enter Batch Size"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:18
+#: includes/admin/views/settings-web-app-manifest.php:223
+msgid "Navigation"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:21
+msgid "Navigation features improve how users move through your site, making it easier to access key pages and understand their current location."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:32
+msgid "Navigation Tab Bar"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:39
+msgid "Navigation tab bar gives an app-like feel by adding a bottom tabbed menu on your web app when viewed on mobile devices."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:44
+msgid "Add sticky navigation tab bar with navigation items."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:69
+msgid "This option restricts the visibility of the navigation tab bar to logged in users only. This is particularly useful for membership sites or platforms where navigation options are relevant only to authenticated users."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:76
+msgid "Show navigation tab bar for logged in users only."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:82
+msgid "Navigation Items"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:89
+msgid "Add items to the navigation tab bar by selecting the icon, label and the page."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:98
+#: includes/admin/views/settings-ui-components.php:546
+#: includes/admin/views/settings-web-app-manifest.php:88
+msgid "Icon"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:512
+#: includes/admin/views/settings-ui-components.php:551
+msgid "Enter Label"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:538
+#: includes/admin/views/settings-ui-components.php:572
+msgid "Add Navigation Item"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:583
+msgid "Swipe Navigation"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:590
+msgid "Swipe navigation feature adds a swipe gesture for navigating between pages. Swiping left or right will navigate to the previous or next page."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:594
+msgid "Swipe-based navigation to go to the previous or next page."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:607
+msgid "Scroll Progress Bar"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:614
+msgid "Scroll Progress Bar feature creates a progress bar on top of the page that indicates the scroll progress percentage of the page."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:619
+msgid "Displays a top bar indicating the scroll progress of the page."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:641
+msgid "Visual Modes"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:644
+msgid "Visual mode features adjust the appearance of your site to improve readability, comfort, and usability across different conditions."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:655
+msgid "Dark Mode"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:662
+msgid "Dark mode adds a switch to your website, allowing users to toggle to a dark version. It can also auto-enable if the user's device is set to Dark Mode or has a low battery, helping save energy."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:667
+msgid "Add a toggle to switch between light and dark themes."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:685
+msgid "Switch Button Type"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:692
+msgid "Select type of your dark mode switch button."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:697
+msgid "Select Switch Button Type"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:700
+msgid "Menu Switch"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:701
+msgid "Floating Button"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:707
+msgid "OS Aware Dark Mode"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:714
+msgid "OS aware dark mode automatically switches your website to a dark mode if your user's device OS theme preference is set to Dark in display settings."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:723
+msgid "Auto-enable Dark Mode if the user's device is set to Dark Mode."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:729
+msgid "Battery Low Dark Mode"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:736
+msgid "Battery low dark mode automatically switches your website to a dark mode if your user's device battery level is less than 10%, thus saving their battery from draining fast."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:745
+msgid "Auto-enable Dark Mode if your user's device battery level is low."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:755
+msgid "Inactive Blur"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:762
+msgid "Inactive Blur feature blurs the website when it's not focused, so when the user switches to another tab in browser or will minimize your website as a background task your website will be blurred."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:767
+msgid "Blurs the website preview when it's not focused."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:791
+msgid "Refresh Interactions"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:794
+msgid "Refresh interaction features allow users to reload content using natural gestures, creating a smoother mobile experience."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:805
+msgid "Pull Down Refresh"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:812
+msgid "Pull down refresh touchscreen gesture allows your users to drag the screen and then release it, as a signal to the application to refresh contents of your web app."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:817
+msgid "Refreshes page when pulling down from top on touchscreen devices."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:834
+msgid "Shake Refresh"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:841
+msgid "Shake refresh gesture brings amazing UX experience to your users by simply shaking phone as a signal to your web application to refresh the contents of the screen."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:846
+msgid "Refreshes page when the device is shaken."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:870
+msgid "System Feedback"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:873
+msgid "System feedback features provide visual cues that show loading states and responses to user actions without disrupting the experience."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:883
+msgid "Page Loader"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:890
+msgid "Page Loader feature gives you ability to show a nice page loader animation between page loadings. Page Loader appears at the start of page load and disappears after it is fully loaded."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:895
+msgid "Shows a page loader animation during page loads."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:911
+msgid "Page Loader Type"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:918
+msgid "Select the type of page loader you want on your website."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:923
+msgid "Select Page Loader Type"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:930
+msgid "Your PWA icon (your website logo) bounces in the middle of the screen, providing a simple and recognizable loading animation."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:931
+msgid "Default"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:936
+msgid "Shows a skeleton loading screen, providing a placeholder layout that mimics the structure of the content being loaded, enhancing perceived performance."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:937
+msgid "Skeleton"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:942
+msgid "Displays spinning circles as the loading animation, indicating that the page is loading with a familiar, straightforward visual."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:943
+msgid "Spinner"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:948
+msgid "Features a flying man icon moving across a yellow background, offering a fun and playful loading experience that entertains users while they wait."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:949
+msgid "Redirect"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:954
+msgid "Displays the loading percentage and a progress bar, giving users a clear and precise indication of the page loading progress."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:955
+msgid "Percent"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:960
+msgid "Smooth transition with fade in and fade out effects, creating a seamless and visually appealing loading experience."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:961
+msgid "Fade"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:971
+msgid "Toast Messages"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:978
+msgid "Toast messages provide simple feedback about an operation in a small popup. It only fills the amount of space required for the message and the current activity remains visible and interactive. Toasts automatically disappear after a timeout."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:983
+msgid "Shows brief feedback in a small popup that automatically disappears after a timeout."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:1010
+msgid "User Actions"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:1013
+msgid "User action features add quick ways for users to interact with content, such as sharing or triggering common actions."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:1023
+msgid "Share Button"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:1030
+msgid "Share Button feature enables a floating button that uses the Web Share API, allowing users to share your content through their device's native sharing options."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:1035
+msgid "Shows a floating share button using the Web Share API."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:1059
+msgid "Select position of your share button on your website."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:1086
+msgid "PWA Custom CSS and JS"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:1089
+msgid "PWA Custom CSS and JS let you apply styles and scripts only in PWA mode. These changes won't affect the site when viewed in a regular browser."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:1098
+msgid "PWA Custom CSS"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:1105
+msgid "Apply custom stylings (CSS) to your PWA."
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:1116
+msgid "PWA Custom JS"
+msgstr ""
+
+#: includes/admin/views/settings-ui-components.php:1123
+msgid "Apply custom scriptings (JS) to your PWA."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:22
+msgid "App Identity"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:25
+msgid "Set your app's core identifiers including its name, short name, icon, description, and categories that represent it across devices and platforms."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:37
+msgid "Dynamic Manifest"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:44
+msgid "The Dynamic Manifest option makes each page individually installable by automatically pulling app details (name, description, URL, screenshots, and more) from the current page. This only applies to individual pages - homepage values come from settings below. Most users should keep this disabled unless they specifically need different app identities per page."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:49
+msgid "Makes each page individually installable by pulling app details from the current page."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:64
+#: includes/admin/views/settings-web-app-manifest.php:686
+msgid "App Icon"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:71
+msgid "Upload an icon representing your app, used for home screen and app listings. Ideally your web app icon should be the logo of your website."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:105
+msgid "App Screenshots"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:112
+msgid "Upload screenshots of your app to showcase its features and user interface in app stores. By default, we auto-generate one mobile and one desktop version screenshot of your homepage, but you can add up to 5 screenshots of different screens and sizes."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:128
+msgid "Drop your screenshots here or"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:131
+msgid "browse"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:135
+msgid "Select up to 5 screenshots."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:143
+msgid "App Name"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:150
+msgid "Specify the full name of your web application, typically matching your business or service name."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:154
+msgid "Enter App Name"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:159
+msgid "Short Name"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:166
+msgid "Provide a brief version (up to 30 characters) of your app’s name for display on home screens and dashboards."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:170
+msgid "Enter Short Name"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:175
+msgid "Description"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:182
+msgid "Enter a concise summary of your app's purpose and main features."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:186
+msgid "Enter Description"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:192
+msgid "Categories"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:199
+msgid "The categories describe the expected application categories to which the web application belongs. It's used as a hint to catalogs or store listing web applications. We recommend not to choose more than 3 categories."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:204
+msgid "Select Categories"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:208
+msgid "Books"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:209
+msgid "Business"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:210
+msgid "Education"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:211
+msgid "Entertainment"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:212
+msgid "Finance"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:213
+msgid "Fitness"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:214
+msgid "Food"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:215
+msgid "Games"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:216
+msgid "Government"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:217
+msgid "Health"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:218
+msgid "Kids"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:219
+msgid "Lifestyle"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:220
+msgid "Magazines"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:221
+msgid "Medical"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:222
+msgid "Music"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:224
+msgid "News"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:225
+msgid "Personalization"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:226
+msgid "Photo"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:227
+msgid "Politics"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:228
+msgid "Productivity"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:229
+msgid "Security"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:230
+msgid "Shopping"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:231
+msgid "Social"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:232
+msgid "Sports"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:233
+msgid "Travel"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:234
+msgid "Utilities"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:235
+msgid "Weather"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:261
+msgid "Display Settings"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:264
+msgid "Adjust how your app looks and functions on user screens by setting the startup page, display layout, and screen orientation."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:273
+msgid "Start Page Path"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:280
+msgid "Set the initial page path that loads when your app is launched from the home screen. In normal cases it should be your homepage, so just a slash - /."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:292
+msgid "Display Mode"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:299
+msgid "Choose how your app displays. We recommend choosing \"Standalone\", as it provides a native app feeling."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:304
+msgid "Select Display Mode"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:311
+msgid "Opens in a separate window for a native app experience."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:312
+msgid "Standalone"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:317
+msgid "Expands to cover the entire screen, hiding browser UI."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:318
+msgid "Fullscreen"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:323
+msgid "Displays with minimal browser UI for a cleaner interface."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:324
+msgid "Minimal UI"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:330
+msgid "Orientation"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:337
+msgid "Select the preferred screen orientation. We recommend choosing \"Portrait\", as it provides a more native app feeling."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:342
+msgid "Select Orientation"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:349
+msgid "The app displays in portrait mode, with the screen height greater than the width."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:350
+msgid "Portrait"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:355
+msgid "The app displays in landscape mode, with the screen width greater than the height."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:356
+msgid "Landscape"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:361
+msgid "The app displays in both portrait and landscape modes."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:362
+msgid "Both"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:371
+msgid "Orientation Lock"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:378
+msgid "Lock the orientation of your app to prevent users from rotating their device."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:383
+msgid "Lock the orientation of your website to prevent users from rotating the contents."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:410
+msgid "Appearance"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:413
+msgid "Change your app's visual elements like theme and background colors to improve the interface and match your branding."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:423
+msgid "iOS Status Bar Style"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:430
+msgid "Specify the style of the status bar for your app on iOS devices."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:435
+msgid "Select iOS Status Bar Style"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:438
+msgid "White bar with black text"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:439
+msgid "Black bar with white text"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:440
+msgid "Transparent bar with white text"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:447
+#: includes/admin/views/settings-web-app-manifest.php:458
+msgid "Theme Color"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:454
+msgid "Define the primary color theme for the browser's toolbar and app's header. It should be the same as the main color palette of your website."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:463
+#: includes/admin/views/settings-web-app-manifest.php:474
+msgid "Background Color"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:470
+msgid "Choose a background color that displays during app startup and loading. It should be the same as the background color of your website."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:492
+msgid "Advanced Features"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:495
+msgid "Add advanced features to your app such as age ratings, related apps, and customizable shortcuts to different functions."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:505
+msgid "IARC Rating ID"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:512
+msgid "International Age Rating Coalition (IARC) certification number, which helps classify your appropriate age group for your app."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:516
+msgid "Enter IARC Rating ID"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:524
+msgid "Related Applications"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:531
+msgid "Related application option gives you the ability to list your native applications related to your web app, for cross-promotion or additional functionality. So if you will relate your native application to your PWA, the browser will prompt the user with your native app instead of the PWA web app. If you don't have a native application for your web app, you can request them by clicking the \"Generate Mobile Apps\" button on the header or navigation menu."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:540
+#: includes/admin/views/settings-web-app-manifest.php:583
+msgid "Select Platform"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:542
+msgid "Android"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:545
+msgid "iOS"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:548
+msgid "Windows"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:553
+#: includes/admin/views/settings-web-app-manifest.php:586
+msgid "Enter App ID"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:576
+#: includes/admin/views/settings-web-app-manifest.php:604
+msgid "Add Related Application"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:614
+msgid "App Shortcuts"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:621
+msgid "App shortcuts help users quickly start common or recommended tasks within your web app. Easy access to those tasks from anywhere the app icon is displayed will enhance users productivity as well as increase their engagement with the web app. The app shortcuts menu is invoked by right-clicking the app icon in the taskbar (Windows) or dock (macOS) on the user's desktop, or long pressing the app's launcher icon on Android."
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:638
+msgid "App Shortcut Icon"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:642
+#: includes/admin/views/settings-web-app-manifest.php:690
+msgid "Enter Shortcut Name"
+msgstr ""
+
+#: includes/admin/views/settings-web-app-manifest.php:671
+#: includes/admin/views/settings-web-app-manifest.php:714
+msgid "Add App Shortcut"
+msgstr ""
+
+#: includes/admin/views/settings.php:18
+msgid "Web App Manifest"
+msgstr ""
+
+#: includes/admin/views/settings.php:26
+msgid "Installation"
+msgstr ""
+
+#: includes/admin/views/settings.php:38
+msgid "Offline Usage"
+msgstr ""
+
+#: includes/admin/views/settings.php:47
+msgid "UI Components"
+msgstr ""
+
+#: includes/admin/views/settings.php:53
+msgid "App Capabilities"
+msgstr ""
+
+#: includes/admin/views/settings.php:60
+#: assets/js/pushPrompt__premium_only.js:257
+msgid "Push Notifications"
+msgstr ""
+
+#: includes/features/installation/views/install-page.php:108
+#: assets/js/installOverlayBanner.js:291
+#: assets/js/installOverlayCheckout__premium_only.js:241
+#: assets/js/installOverlayFeed__premium_only.js:270
+#: assets/js/installOverlayMenu__premium_only.js:279
+#: assets/js/installOverlaySnackbar__premium_only.js:251
+msgid "Install Now"
+msgstr ""
+
+#: includes/features/installation/views/install-page.php:130
+msgid "About"
+msgstr ""
+
+#: includes/features/metrics/classes/PwaScorecard.php:34
+msgid "Get Android and iOS mobile apps"
+msgstr ""
+
+#: includes/features/metrics/classes/PwaScorecard.php:36
+msgid "Send an email to support@daftplug.com with the email address used during your Pro purchase and the website URL where the plugin is active, and we'll generate and deliver your Android and iOS apps directly to you."
+msgstr ""
+
+#: includes/features/metrics/classes/PwaScorecard.php:41
+msgid "Enable secure HTTPS on your server"
+msgstr ""
+
+#: includes/features/metrics/classes/PwaScorecard.php:43
+msgid "It appears you do not have a secure HTTPS server and PWA requires HTTPS connection to function correctly. Please set up it on your server or contact to your hosting provider to enable it for you."
+msgstr ""
+
+#: includes/features/metrics/classes/PwaScorecard.php:48
+msgid "Upload or select your PWA App Icon"
+msgstr ""
+
+#: includes/features/metrics/classes/PwaScorecard.php:55
+msgid "Define your PWA App Name"
+msgstr ""
+
+#: includes/features/metrics/classes/PwaScorecard.php:62
+msgid "Generate PWA Assets (Maskable Icon, Splash Screens, QR Installation)"
+msgstr ""
+
+#: includes/features/metrics/classes/PwaScorecard.php:65
+msgid "It appears PWA assets are not generated. Please go to the Web App Manifest settings and choose App Icon and Background Color so that Intasela PWA will try to re-generate your PWA assets."
+msgstr ""
+
+#: includes/features/metrics/classes/PwaScorecard.php:70
+msgid "Generate ServiceWorker and make it accessible"
+msgstr ""
+
+#: includes/features/metrics/classes/PwaScorecard.php:73
+msgid "It appears the ServiceWorker is not generated and accessible. Please go to the settings and Intasela PWA will automatically try to re-generate ServiceWorker."
+msgstr ""
+
+#: includes/features/metrics/classes/PwaScorecard.php:78
+msgid "Choose your PWA web app categories"
+msgstr ""
+
+#: includes/features/metrics/classes/PwaScorecard.php:84
+msgid "Enable one of the Installation Prompts"
+msgstr ""
+
+#: includes/features/metrics/classes/PwaScorecard.php:91
+msgid "Enable Push Notification Prompt or Button"
+msgstr ""
+
+#: includes/features/offline-usage/views/offline-fallback-page.php:16
+#: includes/features/offline-usage/views/offline-fallback-page.php:22
+msgid "You're Offline"
+msgstr ""
+
+#: includes/features/offline-usage/views/offline-fallback-page.php:24
+msgid "It looks like you lost your internet connection. Please check your connection to reconnect."
+msgstr ""
+
+#: includes/features/offline-usage/views/offline-fallback-page.php:34
+msgid "Reconnect"
+msgstr ""
+
+#. translators: %1$s - post type label, %2$s - post title
+#: includes/features/push-notifications/classes/Automations__premium_only.php:52
+#, php-format
+msgid "New %1$s - %2$s"
+msgstr ""
+
+#. translators: %1$s - post title
+#: includes/features/push-notifications/classes/Automations__premium_only.php:78
+#, php-format
+msgid "Price Drop - %1$s"
+msgstr ""
+
+#. translators: %1$s - regular price, %2$s - dropped price
+#: includes/features/push-notifications/classes/Automations__premium_only.php:80
+#, php-format
+msgid "Price dropped from %1$s to %2$s"
+msgstr ""
+
+#. translators: %1$s - post title
+#: includes/features/push-notifications/classes/Automations__premium_only.php:86
+#, php-format
+msgid "New Sale Price - %1$s"
+msgstr ""
+
+#. translators: %1$s - sale price
+#: includes/features/push-notifications/classes/Automations__premium_only.php:88
+#, php-format
+msgid "New Sale Price: %1$s"
+msgstr ""
+
+#. translators: %1$s - post title
+#: includes/features/push-notifications/classes/Automations__premium_only.php:94
+#, php-format
+msgid "Back In Stock - %1$s"
+msgstr ""
+
+#. translators: %1$s - post title
+#: includes/features/push-notifications/classes/Automations__premium_only.php:96
+#, php-format
+msgid "%1$s is now back in stock"
+msgstr ""
+
+#: includes/features/push-notifications/classes/Automations__premium_only.php:177
+msgid "Your Order Status Updated"
+msgstr ""
+
+#. translators: %1$s - order ID, %2$s - old status, %3$s - new status
+#: includes/features/push-notifications/classes/Automations__premium_only.php:179
+#, php-format
+msgid "Your order (ID %1$s) status has updated from %2$s to %3$s. Click on this notification to see the order."
+msgstr ""
+
+#. translators: %1$s - comment author
+#: includes/features/push-notifications/classes/Automations__premium_only.php:229
+#, php-format
+msgid "New Comment By %1$s"
+msgstr ""
+
+#. translators: %1$s - order number
+#: includes/features/push-notifications/classes/Automations__premium_only.php:275
+#, php-format
+msgid "New Order #%1$s"
+msgstr ""
+
+#. translators: %1$s - customer name, %2$s - currency symbol, %3$s - order total, %4$s - items count
+#: includes/features/push-notifications/classes/Automations__premium_only.php:277
+#, php-format
+msgid "New order from %1$s for %2$s%3$s (%4$d items)"
+msgstr ""
+
+#. translators: %1$s - product name
+#: includes/features/push-notifications/classes/Automations__premium_only.php:350
+#, php-format
+msgid "Low Stock Alert: %1$s"
+msgstr ""
+
+#. translators: %1$s - stock level, %2$s - threshold, %3$s - stock status, %4$s - SKU
+#: includes/features/push-notifications/classes/Automations__premium_only.php:352
+#, php-format
+msgid "Stock level: %1$d (Threshold: %2$d)%3$s. SKU: %4$s"
+msgstr ""
+
+#. translators: %1$s - mentioner name, %2$s - activity type
+#: includes/features/push-notifications/classes/Automations__premium_only.php:378
+#, php-format
+msgid "%1$s has just mentioned you in a %2$s"
+msgstr ""
+
+#. translators: %1$s - mentioner name, %2$s - activity type
+#: includes/features/push-notifications/classes/Automations__premium_only.php:378
+msgid "comment"
+msgstr ""
+
+#. translators: %1$s - mentioner name, %2$s - activity type
+#: includes/features/push-notifications/classes/Automations__premium_only.php:378
+msgid "update"
+msgstr ""
+
+#. translators: %1$s - mentioner name
+#: includes/features/push-notifications/classes/Automations__premium_only.php:382
+#, php-format
+msgid "New mention from %1$s"
+msgstr ""
+
+#. translators: %1$s - commenter name
+#: includes/features/push-notifications/classes/Automations__premium_only.php:407
+#, php-format
+msgid "New comment from %1$s"
+msgstr ""
+
+#. translators: %1$s - commenter name
+#: includes/features/push-notifications/classes/Automations__premium_only.php:409
+#, php-format
+msgid "%1$s has just commented on your post."
+msgstr ""
+
+#. translators: %1$s - replyer name
+#: includes/features/push-notifications/classes/Automations__premium_only.php:433
+#, php-format
+msgid "New reply from %1$s"
+msgstr ""
+
+#. translators: %1$s - replyer name
+#: includes/features/push-notifications/classes/Automations__premium_only.php:435
+#, php-format
+msgid "%1$s has just replied to you."
+msgstr ""
+
+#. translators: %1$s - sender name
+#: includes/features/push-notifications/classes/Automations__premium_only.php:463
+#, php-format
+msgid "New message from %1$s"
+msgstr ""
+
+#. translators: %1$s - sender name
+#: includes/features/push-notifications/classes/Automations__premium_only.php:490
+#, php-format
+msgid "New friend request from %1$s"
+msgstr ""
+
+#. translators: %1$s - sender name
+#: includes/features/push-notifications/classes/Automations__premium_only.php:492
+#, php-format
+msgid "%1$s has just sent you a friend request."
+msgstr ""
+
+#. translators: %1$s - friend name
+#: includes/features/push-notifications/classes/Automations__premium_only.php:518
+msgid "Friend request accepted"
+msgstr ""
+
+#. translators: %1$s - friend name
+#: includes/features/push-notifications/classes/Automations__premium_only.php:520
+#, php-format
+msgid "%1$s has just accepted your friend request."
+msgstr ""
+
+#. translators: %1$s - post author name
+#: includes/features/push-notifications/classes/Automations__premium_only.php:585
+#, php-format
+msgid "New Post by %1$s"
+msgstr ""
+
+#. translators: %1$s - comment author display name
+#: includes/features/push-notifications/classes/Automations__premium_only.php:670
+#, php-format
+msgid "New Reply by %1$s"
+msgstr ""
+
+#. translators: %1$s - comment author display name
+#: includes/features/push-notifications/classes/Automations__premium_only.php:673
+#, php-format
+msgid "New Comment by %1$s"
+msgstr ""
+
+#: includes/features/push-notifications/classes/Notifications.php:524
+msgid "The notification was sent."
+msgstr ""
+
+#: includes/features/push-notifications/classes/Notifications.php:531
+#: assets/_src/js/modules/pushModal.js:51
+msgid "Sending failed. There was an error on server."
+msgstr ""
+
+#: includes/features/push-notifications/classes/Subscription.php:283
+msgid "Welcome to Notifications!"
+msgstr ""
+
+#: includes/features/push-notifications/classes/Subscription.php:284
+msgid "Thank you for subscribing. You’ll now receive important updates from us."
+msgstr ""
+
+#: assets/js/darkMode__premium_only.js:461
+#: assets/js/darkMode__premium_only.js:520
+msgid "Toggle dark mode"
+msgstr ""
+
+#: assets/js/idleDetection.js:179
+msgid "You've been idle for a while."
+msgstr ""
+
+#: assets/js/installButton.js:86
+#: assets/js/installOverlayBanner.js:136
+#: assets/js/installOverlayCheckout__premium_only.js:145
+#: assets/js/installOverlayFeed__premium_only.js:175
+#: assets/js/installOverlayMenu__premium_only.js:184
+#: assets/js/installOverlaySnackbar__premium_only.js:152
+#: assets/js/installPrompt.js:1014
+msgid "Install Web App"
+msgstr ""
+
+#: assets/js/installOverlayBanner.js:137
+msgid "Get our web app. It won't take up space on your device."
+msgstr ""
+
+#: assets/js/installOverlayBlog__premium_only.js:386
+msgid "Read this article in our web app"
+msgstr ""
+
+#: assets/js/installOverlayBlog__premium_only.js:395
+msgid "Open"
+msgstr ""
+
+#: assets/js/installOverlayBlog__premium_only.js:404
+msgid "Continue"
+msgstr ""
+
+#: assets/js/installOverlayCheckout__premium_only.js:146
+msgid "Keep track of your orders. Our web app is fast, small and works offline."
+msgstr ""
+
+#: assets/js/installOverlayFeed__premium_only.js:176
+msgid "Keep reading, even when you're on the train!"
+msgstr ""
+
+#: assets/js/installOverlayMenu__premium_only.js:185
+msgid "Find what you need faster by installing our web app!"
+msgstr ""
+
+#: assets/js/installOverlaySnackbar__premium_only.js:153
+msgid "Installing uses no storage and offers a quick way back to our web app."
+msgstr ""
+
+#: assets/js/installPrompt.js:503
+msgid "Checking installation capabilities..."
+msgstr ""
+
+#: assets/js/installPrompt.js:558
+msgid "Click to Install"
+msgstr ""
+
+#: assets/js/installPrompt.js:562
+msgid "Tap to Install"
+msgstr ""
+
+#: assets/js/installPrompt.js:717
+#: assets/js/installPrompt.js:721
+#: assets/js/installPrompt.js:725
+#: assets/js/installPrompt.js:729
+#: assets/js/installPrompt.js:750
+#: assets/js/installPrompt.js:756
+#: assets/js/installPrompt.js:762
+#: assets/js/installPrompt.js:782
+#: assets/js/installPrompt.js:787
+msgid "Tap the Menu Icon"
+msgstr ""
+
+#: assets/js/installPrompt.js:717
+#: assets/js/installPrompt.js:721
+#: assets/js/installPrompt.js:725
+msgid "Tap the menu icon (three dots), located at the top-right of your screen."
+msgstr ""
+
+#: assets/js/installPrompt.js:718
+#: assets/js/installPrompt.js:742
+#: assets/js/installPrompt.js:747
+#: assets/js/installPrompt.js:753
+#: assets/js/installPrompt.js:759
+#: assets/js/installPrompt.js:765
+#: assets/js/installPrompt.js:770
+msgid "Select \"Add to Home Screen\""
+msgstr ""
+
+#: assets/js/installPrompt.js:718
+msgid "Tap the \"Add to Home Screen\" option from the menu."
+msgstr ""
+
+#: assets/js/installPrompt.js:719
+#: assets/js/installPrompt.js:727
+#: assets/js/installPrompt.js:743
+#: assets/js/installPrompt.js:748
+#: assets/js/installPrompt.js:754
+#: assets/js/installPrompt.js:760
+#: assets/js/installPrompt.js:766
+#: assets/js/installPrompt.js:771
+msgid "Confirm by Tapping \"Add\""
+msgstr ""
+
+#: assets/js/installPrompt.js:719
+#: assets/js/installPrompt.js:727
+msgid "Tap the \"Add\" text on the browser installation dialog."
+msgstr ""
+
+#: assets/js/installPrompt.js:722
+msgid "Select \"Install\""
+msgstr ""
+
+#: assets/js/installPrompt.js:722
+#: assets/js/installPrompt.js:726
+msgid "Tap the \"Install\" option from the menu."
+msgstr ""
+
+#: assets/js/installPrompt.js:723
+msgid "Confirm by Tapping \"Add to Home Screen\""
+msgstr ""
+
+#: assets/js/installPrompt.js:723
+msgid "Tap the \"Add to Home Screen\" button on the browser installation dialog."
+msgstr ""
+
+#: assets/js/installPrompt.js:726
+msgid "Select \"Home Screen\""
+msgstr ""
+
+#: assets/js/installPrompt.js:729
+#: assets/js/installPrompt.js:750
+#: assets/js/installPrompt.js:762
+msgid "Tap the menu icon (three horizontal lines) located at the bottom-right of your screen."
+msgstr ""
+
+#: assets/js/installPrompt.js:730
+msgid "Select \"Add to Phone\""
+msgstr ""
+
+#: assets/js/installPrompt.js:730
+msgid "Tap the \"Add to Phone\" option from the menu"
+msgstr ""
+
+#: assets/js/installPrompt.js:731
+msgid "Confirm by Tapping \"Install\""
+msgstr ""
+
+#: assets/js/installPrompt.js:731
+msgid "Tap the \"Install\" text on the browser installation dialog."
+msgstr ""
+
+#: assets/js/installPrompt.js:733
+#: assets/js/installPrompt.js:773
+#: assets/js/installPrompt.js:792
+msgid "Copy the Page URL"
+msgstr ""
+
+#: assets/js/installPrompt.js:733
+#: assets/js/installPrompt.js:773
+#: assets/js/installPrompt.js:792
+msgid "Click the button below to copy the page's URL."
+msgstr ""
+
+#: assets/js/installPrompt.js:734
+#: assets/js/installPrompt.js:793
+msgid "Open the Google Chrome Browser"
+msgstr ""
+
+#: assets/js/installPrompt.js:734
+msgid "Launch the Google Chrome web browser from your home screen."
+msgstr ""
+
+#: assets/js/installPrompt.js:735
+#: assets/js/installPrompt.js:775
+#: assets/js/installPrompt.js:794
+msgid "Paste and Open the URL"
+msgstr ""
+
+#: assets/js/installPrompt.js:735
+#: assets/js/installPrompt.js:794
+msgid "Paste the copied URL into Google Chrome's address bar and open the page."
+msgstr ""
+
+#: assets/js/installPrompt.js:739
+msgid "Tap the Menu button"
+msgstr ""
+
+#: assets/js/installPrompt.js:739
+msgid "Open Safari menu (three horizontal dots) located at the bottom-right of the address bar."
+msgstr ""
+
+#: assets/js/installPrompt.js:740
+msgid "Select \"Share\""
+msgstr ""
+
+#: assets/js/installPrompt.js:740
+msgid "Tap the \"Share\" option, which is the first item in the menu at the top-center of your screen."
+msgstr ""
+
+#: assets/js/installPrompt.js:741
+#: assets/js/installPrompt.js:746
+#: assets/js/installPrompt.js:752
+#: assets/js/installPrompt.js:758
+#: assets/js/installPrompt.js:764
+#: assets/js/installPrompt.js:769
+msgid "Tap the More button"
+msgstr ""
+
+#: assets/js/installPrompt.js:741
+#: assets/js/installPrompt.js:746
+#: assets/js/installPrompt.js:752
+#: assets/js/installPrompt.js:758
+#: assets/js/installPrompt.js:764
+#: assets/js/installPrompt.js:769
+msgid "Tap the \"More\" button (three horizontal dots) located at the bottom-right of the share dialog."
+msgstr ""
+
+#: assets/js/installPrompt.js:742
+#: assets/js/installPrompt.js:747
+#: assets/js/installPrompt.js:753
+#: assets/js/installPrompt.js:759
+#: assets/js/installPrompt.js:765
+#: assets/js/installPrompt.js:770
+msgid "Tap the \"Add to Home Screen\" option, represented by the plus [+] icon."
+msgstr ""
+
+#: assets/js/installPrompt.js:743
+#: assets/js/installPrompt.js:748
+#: assets/js/installPrompt.js:754
+#: assets/js/installPrompt.js:760
+#: assets/js/installPrompt.js:766
+#: assets/js/installPrompt.js:771
+msgid "Tap the \"Add\" button at the top-right corner of your screen."
+msgstr ""
+
+#: assets/js/installPrompt.js:745
+#: assets/js/installPrompt.js:751
+#: assets/js/installPrompt.js:757
+#: assets/js/installPrompt.js:763
+#: assets/js/installPrompt.js:768
+msgid "Tap the Share Icon"
+msgstr ""
+
+#: assets/js/installPrompt.js:745
+msgid "Tap the share icon located at the top-right of your browser address bar."
+msgstr ""
+
+#: assets/js/installPrompt.js:751
+#: assets/js/installPrompt.js:763
+msgid "Tap the share icon in the dialog overlay that the browser opens."
+msgstr ""
+
+#: assets/js/installPrompt.js:756
+msgid "Tap the menu icon (three dots), located at the bottom-right of your screen."
+msgstr ""
+
+#: assets/js/installPrompt.js:757
+msgid "Tap the share icon located at the top of the dialog overlay that browser opens."
+msgstr ""
+
+#: assets/js/installPrompt.js:768
+msgid "Tap the share icon located at the right side of the browser's address bar."
+msgstr ""
+
+#: assets/js/installPrompt.js:774
+msgid "Open the Safari Browser"
+msgstr ""
+
+#: assets/js/installPrompt.js:774
+msgid "Launch the Safari web browser from your home screen."
+msgstr ""
+
+#: assets/js/installPrompt.js:775
+msgid "Paste the copied URL into Safari's address bar and open the page."
+msgstr ""
+
+#: assets/js/installPrompt.js:778
+#: assets/js/installPrompt.js:797
+msgid "Installation Not Supported"
+msgstr ""
+
+#: assets/js/installPrompt.js:778
+msgid "Your operating system does not support web app installation. Please try accessing the website on an Android or iOS mobile device."
+msgstr ""
+
+#: assets/js/installPrompt.js:782
+#: assets/js/installPrompt.js:787
+msgid "Tap the menu icon (three dots) in the top-right corner of your browser window."
+msgstr ""
+
+#: assets/js/installPrompt.js:783
+msgid "Expand \"Cast, save and share\""
+msgstr ""
+
+#: assets/js/installPrompt.js:783
+msgid "Hover over the \"Cast, Save, and Share\" menu item to expand its options."
+msgstr ""
+
+#: assets/js/installPrompt.js:784
+msgid "Select \"Install page as app...\""
+msgstr ""
+
+#: assets/js/installPrompt.js:784
+msgid "Click on \"Install page as app...\" from the menu."
+msgstr ""
+
+#: assets/js/installPrompt.js:785
+#: assets/js/installPrompt.js:790
+msgid "Confirm by Clicking \"Install\""
+msgstr ""
+
+#: assets/js/installPrompt.js:785
+#: assets/js/installPrompt.js:790
+msgid "Click the \"Install\" button in the browser's installation dialog."
+msgstr ""
+
+#: assets/js/installPrompt.js:788
+msgid "Expand \"Apps\""
+msgstr ""
+
+#: assets/js/installPrompt.js:788
+msgid "Hover over the \"Apps\" menu item to expand its options."
+msgstr ""
+
+#: assets/js/installPrompt.js:789
+msgid "Select \"Install this site as app\""
+msgstr ""
+
+#: assets/js/installPrompt.js:789
+msgid "Click on \"Install this site as app\" from the menu."
+msgstr ""
+
+#: assets/js/installPrompt.js:793
+msgid "Launch the Google Chrome web browser from your start menu."
+msgstr ""
+
+#: assets/js/installPrompt.js:797
+msgid "Your device does not support web app installation. Please try accessing the website on a mobile or desktop device."
+msgstr ""
+
+#: assets/js/installPrompt.js:1034
+msgid "Close Dialog"
+msgstr ""
+
+#: assets/js/offlineForms__premium_only.js:482
+msgid "No Internet Connection"
+msgstr ""
+
+#: assets/js/offlineForms__premium_only.js:486
+msgid "You’re currently offline. Your form submission data will be saved and be automatically processed in the background when you’re back online within 24 hours. Would you like to proceed?"
+msgstr ""
+
+#: assets/js/offlineNotification__premium_only.js:53
+#: assets/js/offlineNotification__premium_only.js:185
+msgid "Connection lost. Attempting to reconnect..."
+msgstr ""
+
+#: assets/js/offlineNotification__premium_only.js:74
+msgid "Successfully reconnected to the internet!"
+msgstr ""
+
+#: assets/js/pullDownRefresh__premium_only.js:118
+msgid "Release to refresh"
+msgstr ""
+
+#: assets/js/pullDownRefresh__premium_only.js:120
+#: assets/js/pullDownRefresh__premium_only.js:250
+msgid "Pull down to refresh"
+msgstr ""
+
+#: assets/js/pullDownRefresh__premium_only.js:140
+msgid "Refreshing..."
+msgstr ""
+
+#: assets/js/pushButton.js:209
+msgid "Enable / Disable Push Notifications"
+msgstr ""
+
+#: assets/js/pushPrompt__premium_only.js:126
+msgid "We would like to show you notifications for the latest news and updates."
+msgstr ""
+
+#: assets/js/pushPrompt__premium_only.js:266
+msgid "Allow Notifications"
+msgstr ""
+
+#: assets/js/shakeRefresh__premium_only.js:173
+msgid "Shake detected! Refreshing the page..."
+msgstr ""
+
+#: assets/js/shareButton.js:121
+msgid "Share"
+msgstr ""
+
+#: assets/js/toastMessages__premium_only.js:120
+msgid "Homepage Opened"
+msgstr ""
+
+#: assets/js/toastMessages__premium_only.js:123
+msgid "Page Not Found"
+msgstr ""
+
+#: assets/js/toastMessages__premium_only.js:126
+msgid "Search Results"
+msgstr ""
+
+#: assets/js/toastMessages__premium_only.js:129
+msgid "Article Opened"
+msgstr ""
+
+#: assets/js/toastMessages__premium_only.js:132
+msgid "Shop Opened"
+msgstr ""
+
+#: assets/js/toastMessages__premium_only.js:135
+msgid "Product Opened"
+msgstr ""
+
+#: assets/js/toastMessages__premium_only.js:138
+msgid "Page Opened"
+msgstr ""
+
+#: assets/_src/js/components/imageAttachment.js:29
+msgid "Select or upload"
+msgstr ""
+
+#: assets/_src/js/components/imageAttachment.js:31
+msgid "Select"
+msgstr ""
+
+#: assets/_src/js/components/select.js:119
+msgid "Search..."
+msgstr ""
+
+#: assets/_src/js/components/settings.js:136
+msgid "Saving..."
+msgstr ""
+
+#: assets/_src/js/components/settings.js:136
+msgid "Changes are being saved."
+msgstr ""
+
+#: assets/_src/js/components/settings.js:178
+msgid "Settings Saved"
+msgstr ""
+
+#: assets/_src/js/components/settings.js:178
+msgid "Changes have been saved."
+msgstr ""
+
+#: assets/_src/js/components/settings.js:180
+msgid "Warning"
+msgstr ""
+
+#: assets/_src/js/components/settings.js:180
+msgid "Settings saved but PWA assets generation failed."
+msgstr ""
+
+#: assets/_src/js/components/settings.js:195
+msgid "Save Failed"
+msgstr ""
+
+#: assets/_src/js/components/settings.js:195
+msgid "Changes have failed to be saved."
+msgstr ""
+
+#: assets/_src/js/modules/appScreenshotsUpload__premium_only.js:123
+msgid "Select or upload App Screenshots"
+msgstr ""
+
+#: assets/_src/js/modules/appScreenshotsUpload__premium_only.js:125
+msgid "Select Screenshots"
+msgstr ""
+
+#: assets/_src/js/modules/appShortcutIconUpload__premium_only.js:34
+msgid "Select or upload an App Shortcut Icon"
+msgstr ""
+
+#: assets/_src/js/modules/appShortcutIconUpload__premium_only.js:36
+msgid "Select App Shortcut Icon"
+msgstr ""
+
+#: assets/_src/js/modules/pushModal.js:89
+#: assets/_src/js/modules/pushModal.js:101
+#: assets/_src/js/modules/pushModal.js:105
+msgid "Fail"
+msgstr ""
+
+#: assets/_src/js/modules/pushModal.js:89
+msgid "Notifications are not supported by your browser."
+msgstr ""
+
+#: assets/_src/js/modules/pushModal.js:101
+msgid "You need to accept the notifications permission to preview."
+msgstr ""
+
+#: assets/_src/js/modules/pushModal.js:105
+msgid "Push notifications are blocked by your browser."
+msgstr ""
+
+#: assets/_src/js/modules/pushSubscribers.js:98
+msgid "No Subscribers"
+msgstr ""
+
+#: assets/_src/js/modules/pushSubscribers.js:101
+msgid "There are no push notification subscribers yet."
+msgstr ""
+
+#: assets/_src/js/modules/pushSubscribers.js:182
+msgid "Delete"
+msgstr ""
+
+#: assets/_src/js/modules/pushSubscribers.js:233
+msgid "Are you sure you want to remove this subscriber?"
+msgstr ""
+
+#: assets/_src/js/modules/pwaScoreData.js:111
+msgid "No Action Items"
+msgstr ""
+
+#: assets/_src/js/modules/pwaScoreData.js:114
+msgid "Your PWA seems fully setup and your score is excellent."
+msgstr ""
+
+#: assets/_src/js/modules/pwaScoreData.js:125
+msgid "Action Items"
+msgstr ""
+
+#: assets/_src/js/modules/pwaScoreData.js:157
+msgid "Show All"
+msgstr ""
+
+#: assets/_src/js/modules/pwaUsersData.js:142
+#: assets/_src/js/modules/pwaUsersData.js:207
+msgid "PWA Installs"
+msgstr ""
