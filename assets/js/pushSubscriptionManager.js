@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const pushSubscriptionManagerJsVars = window['intasela-pwa_push_subscription_manager_js_vars'] || {};
+  const pushSubscriptionManagerJsVars = window['intasela_pwa_push_subscription_manager_js_vars'] || {};
 
   class PushNotificationsSubscriptionManager {
     constructor() {
