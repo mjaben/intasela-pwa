@@ -123,12 +123,11 @@ class AutomatedNotifications {
         $author_name = $author ? $author->display_name : 'Someone';
 
         $space_title = isset( $feed->space->title ) ? $feed->space->title : 'Space';
-        $space_slug = isset( $feed->space->slug ) ? $feed->space->slug : '';
 
         $notificationData = [
             'title' => sprintf( esc_html__( 'New Post in %s', 'intasela-pwa' ), $space_title ),
             'body'  => sprintf( esc_html__( '%s created a new post.', 'intasela-pwa' ), $author_name ),
-            'data'  => [ 'url' => \FluentCommunity\App\Services\Helper::baseUrl( 'space/' . $space_slug . '/post/' . $feed->id ) ],
+            'data'  => [ 'url' => method_exists($feed, 'getPermalink') ? $feed->getPermalink() : '' ],
         ];
 
         Notifications::sendPushNotification( array_values( $users ), $notificationData );
@@ -167,12 +166,10 @@ class AutomatedNotifications {
             return;
         }
 
-        $space_slug = isset( $feed->space->slug ) ? $feed->space->slug : '';
-
         $notificationData = [
             'title' => esc_html__( 'You were mentioned', 'intasela-pwa' ),
             'body'  => sprintf( esc_html__( '%s mentioned you in a post.', 'intasela-pwa' ), $author_name ),
-            'data'  => [ 'url' => \FluentCommunity\App\Services\Helper::baseUrl( 'space/' . $space_slug . '/post/' . $feed->id ) ],
+            'data'  => [ 'url' => method_exists($feed, 'getPermalink') ? $feed->getPermalink() : '' ],
         ];
 
         Notifications::sendPushNotification( array_values( $userIds ), $notificationData );
@@ -184,8 +181,7 @@ class AutomatedNotifications {
     public function handleFluentNewComment( $comment, $feed, $mentions ) {
         $author = get_userdata( $comment->user_id );
         $author_name = $author ? $author->display_name : 'Someone';
-        $space_slug = isset( $feed->space->slug ) ? $feed->space->slug : '';
-        $postUrl = \FluentCommunity\App\Services\Helper::baseUrl( 'space/' . $space_slug . '/post/' . $feed->id );
+        $postUrl = method_exists($feed, 'getPermalink') ? $feed->getPermalink() : '';
 
         // Track who has been notified to prevent duplicate notifications from multiple triggers
         $notifiedUsers = [$comment->user_id]; // Exclude the comment author immediately
