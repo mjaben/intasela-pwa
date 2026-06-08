@@ -146,7 +146,8 @@ class Notifications {
             }
             if ( empty( $subscribers ) ) {
                 return [
-                    'error' => 'No subscribers found for the specified target',
+                    'error'   => true,
+                    'message' => 'No subscribers found for the specified target',
                 ];
             }
             // Queue notifications
