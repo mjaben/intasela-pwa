@@ -206,13 +206,13 @@ class Notifications {
         }
         $pushNotificationData = [
             'image'              => ( !empty( $notificationData['notificationImage'] ) ? wp_get_attachment_url( $notificationData['notificationImage'] ) : '' ),
-            'title'              => sanitize_text_field( $notificationData['notificationTitle'] ),
-            'body'               => sanitize_textarea_field( $notificationData['notificationMessage'] ),
+            'title'              => sanitize_text_field( $notificationData['notificationTitle'] ?? '' ),
+            'body'               => sanitize_textarea_field( $notificationData['notificationMessage'] ?? '' ),
             'data'               => [
-                'url' => esc_url_raw( $notificationData['notificationUrl'] ),
+                'url' => esc_url_raw( $notificationData['notificationUrl'] ?? '' ),
             ],
-            'requireInteraction' => $notificationData['notificationPersistent'] === 'on',
-            'vibrate'            => ( $notificationData['notificationVibration'] === 'on' ? [200, 100, 200] : [] ),
+            'requireInteraction' => ( $notificationData['notificationPersistent'] ?? '' ) === 'on',
+            'vibrate'            => ( ( $notificationData['notificationVibration'] ?? '' ) === 'on' ? [200, 100, 200] : [] ),
             'actions'            => [],
         ];
         $sentReport = $this->sendPushNotification( 'everyone', $pushNotificationData );

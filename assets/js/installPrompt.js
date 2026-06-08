@@ -259,7 +259,10 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     `);
 
-      const appName = installPromptJsVars.appName;
+      const { browser } = window.IntaselaPWAUADetector || {};
+      const appName = (browser && browser.isChrome && installPromptJsVars.appShortName)
+        ? installPromptJsVars.appShortName
+        : (installPromptJsVars.appName || '');
       return appName
         ? `
       <div class="install-prompt-body-appinfo_appname">${appName}</div>

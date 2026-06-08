@@ -30,6 +30,7 @@ class InstallPrompts {
             'homeUrl'                 => esc_url( Utils::getHomeUrl( '/', false ) ),
             'iconUrl'                 => PwaAssets::getPwaIconUrl( 'maskable', 180 ),
             'appName'                 => Utils::getSetting( 'appName' ),
+            'appShortName'            => Utils::getSetting( 'shortName' ),
             'description'             => Utils::getSetting( 'description' ),
             'startPagePath'           => Utils::getSetting( 'startPagePath' ),
             'themeColor'              => Utils::getSetting( 'themeColor' ),
