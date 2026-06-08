@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   if (!window.IntaselaPWAUADetector || !window.IntaselaPWAUADetector.isSupported) return;
 
-  const installButtonJsVars = window['intasela-pwa_install_button_js_vars'] || {};
+  const installButtonJsVars = window['intasela_pwa_install_button_js_vars'] || {};
 
   const getContrastTextColor = (backgroundColor) => {
     const temp = document.createElement('div');

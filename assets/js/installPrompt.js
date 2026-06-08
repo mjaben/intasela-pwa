@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const installPromptJsVars = window['intasela-pwa_install_prompt_js_vars'] || {};
+  const installPromptJsVars = window['intasela_pwa_install_prompt_js_vars'] || {};
 
   let deferredInstallPrompt = null;
 

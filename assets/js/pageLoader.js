@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   if (!window.IntaselaPWAUADetector || !window.IntaselaPWAUADetector.isSupported) return;
 
-  const pageLoaderJsVars = window['intasela-pwa_page_loader_js_vars'] || {};
+  const pageLoaderJsVars = window['intasela_pwa_page_loader_js_vars'] || {};
 
   const getContrastTextColor = (backgroundColor) => {
     const temp = document.createElement('div');

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   if (!window.IntaselaPWAUADetector || !window.IntaselaPWAUADetector.isSupported) return;
 
-  const scrollProgressBarJsVars = window['intasela-pwa_scroll_progress_bar_js_vars'] || {};
+  const scrollProgressBarJsVars = window['intasela_pwa_scroll_progress_bar_js_vars'] || {};
 
   class IntaselaPWAScrollProgressBar extends HTMLElement {
     constructor() {

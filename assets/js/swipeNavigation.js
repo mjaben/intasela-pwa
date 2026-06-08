@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   if (!window.IntaselaPWAUADetector || !window.IntaselaPWAUADetector.isSupported || !window.IntaselaPWAUADetector.isMobile()) return;
 
-  const swipeNavigationJsVars = window['intasela-pwa_swipe_navigation_js_vars'] || {};
+  const swipeNavigationJsVars = window['intasela_pwa_swipe_navigation_js_vars'] || {};
 
   const getContrastTextColor = (backgroundColor) => {
     const temp = document.createElement('div');

@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   if (!window.IntaselaPWAUADetector || !window.IntaselaPWAUADetector.isSupported || !window.IntaselaPWAUADetector.isMobile()) return;
 
-  const idleDetectionJsVars = window['intasela-pwa_idle_detection_js_vars'] || {};
+  const idleDetectionJsVars = window['intasela_pwa_idle_detection_js_vars'] || {};
 
   if (!('IdleDetector' in window)) {
     console.log('Idle Detection API is not supported in this browser.');

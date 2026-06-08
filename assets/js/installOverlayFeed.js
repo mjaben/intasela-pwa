@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   if (!window.IntaselaPWAUADetector || !window.IntaselaPWAUADetector.isSupported) return;
 
-  const intasela_pwa_install_overlay_feed_js_vars = window['intasela-pwa_install_overlay_banner_js_vars'] || {};
+  const intasela_pwa_install_overlay_feed_js_vars = window['intasela_pwa_install_overlay_feed_js_vars'] || {};
 
   const getContrastTextColor = (backgroundColor) => {
     const temp = document.createElement('div');
@@ -73,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
     IntaselaPWAInstallPrompt.show();
   };
 
-  if (isPwa() || getCookie('intasela-pwa_feed_overlay_shown')) {
+  if (isPwa() || getCookie('intasela_pwa_feed_overlay_shown')) {
     return;
   }
 
@@ -304,5 +304,5 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   IntaselaPWAInstallOverlayFeed.show();
-  setCookie(`intasela-pwa_feed_overlay_shown`, 'true', intasela_pwa_install_overlay_feed_js_vars.installationPromptsTimeout ?? 1);
+  setCookie(`intasela_pwa_feed_overlay_shown`, 'true', intasela_pwa_install_overlay_feed_js_vars.installationPromptsTimeout ?? 1);
 });

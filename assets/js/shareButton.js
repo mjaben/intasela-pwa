@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', function () {
   if (!window.IntaselaPWAUADetector || !window.IntaselaPWAUADetector.isSupported) return;
 
-  const shareButtonJsVars = window['intasela-pwa_share_button_js_vars'] || {};
+  const shareButtonJsVars = window['intasela_pwa_share_button_js_vars'] || {};
 
   const getContrastTextColor = (backgroundColor) => {
     const temp = document.createElement('div');

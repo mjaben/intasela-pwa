@@ -155,9 +155,21 @@ class FluentCommunity {
         $plugin_url = plugins_url('', INTASELA_PWA_FILE);
         $version    = INTASELA_PWA_VERSION;
 
-        // --- UA Detector (shared dependency) ---
-        $this->intasela_pwa_print_script("{$plugin_url}/assets/js/uaDetector.js", $version);
+        // --- Mock wp.i18n for headless mode ---
+        echo "<script>\n";
+        echo "window.wp = window.wp || {};\n";
+        echo "window.wp.i18n = window.wp.i18n || { __: function(text) { return text; } };\n";
+        echo "</script>\n";
 
+        // --- UA Parser (vendor) ---
+        $this->intasela_pwa_print_script("{$plugin_url}/assets/js/vendor/ua-parser.min.js", $version);
+
+        // --- UA Detector (shared dependency) ---
+        $this->intasela_pwa_print_localized_vars('intasela_pwa_ua_detector_vars', [
+            'supportAllPlatforms' => Utils::getSetting('supportAllPlatforms', 'on'),
+            'supportedPlatforms'  => Utils::getSetting('supportedPlatforms', []),
+        ]);
+        $this->intasela_pwa_print_script("{$plugin_url}/assets/js/uaDetector.js", $version);
         // --- Push Subscription Manager ---
         $vapid_keys = PushNotifications::getVapidKeys();
         $this->intasela_pwa_print_localized_vars('intasela_pwa_push_subscription_manager_js_vars', [
