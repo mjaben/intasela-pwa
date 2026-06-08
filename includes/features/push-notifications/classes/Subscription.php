@@ -189,6 +189,12 @@ class Subscription {
     public function addSubscription( \WP_REST_Request $request ) {
         global $wpdb;
         $wpdb->intasela_pwa_push_notifications_subscribers_table = $wpdb->prefix . 'intasela_pwa_push_notifications_subscribers';
+        
+        // Ensure table exists just in case the plugin was updated without triggering activation hooks
+        if ( $wpdb->get_var( $wpdb->prepare( 'SHOW TABLES LIKE %s', $wpdb->intasela_pwa_push_notifications_subscribers_table ) ) !== $wpdb->intasela_pwa_push_notifications_subscribers_table ) {
+            self::createSubscribersTable();
+        }
+
         $endpoint = sanitize_text_field( $request->get_param( 'endpoint' ) );
         $authKey = sanitize_text_field( $request->get_param( 'authKey' ) );
         $p256dhKey = sanitize_text_field( $request->get_param( 'p256dhKey' ) );
