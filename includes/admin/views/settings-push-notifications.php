@@ -422,19 +422,19 @@ if ( Utils::isWpCommentsEnabled() ) {
 }
 ?>
       <?php 
-if ( Utils::isPluginActive( 'woocommerce' ) ) {
+if ( defined( 'FLUENT_COMMUNITY_PLUGIN_VERSION' ) ) {
     ?>
-      <div id="settingPushWooPriceDrop" class="relative bg-white border border-gray-200 rounded-xl py-2 px-3 <?php 
+      <div id="settingPushFluentPost" class="relative bg-white border border-gray-200 rounded-xl py-2 px-3 <?php 
     echo ( !true ? '*:pointer-events-none [&_[data-dp-tooltip]]:pointer-events-auto cursor-pointer" data-needs-active-pro="true' : '' );
     ?>">
-        <label for="pushAutomationWooPriceDrop" class="cursor-pointer flex gap-x-3">
+        <label for="pushAutomationFcNewPost" class="cursor-pointer flex gap-x-3">
           <div class="grow">
             <h3 class="flex items-center text-sm text-gray-800 font-semibold">
               <?php 
     echo ( !true ? '<span class="mr-1.5 inline-flex items-center gap-1.5 pt-[3px] pb-1 px-1.5 rounded-lg text-[10px] leading-none font-medium bg-indigo-600 text-white">Pro</span>' : '' );
     ?>
               <?php 
-    esc_html_e( 'WooCommerce Price Drop', 'intasela-pwa' );
+    esc_html_e( 'FluentCommunity New Post', 'intasela-pwa' );
     ?>
               <button type="button" class="group/tooltip relative cursor-help ms-1 flex" tabindex="-1" data-dp-tooltip='{"trigger": "hover", "placement": "top"}'>
                 <svg class="inline-block size-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -443,37 +443,37 @@ if ( Utils::isPluginActive( 'woocommerce' ) ) {
                 </svg>
                 <span class="dp-tooltip-content group-data-[shown=true]/tooltip:opacity-100 group-data-[shown=true]/tooltip:visible opacity-0 transition-opacity inline-block absolute w-max invisible max-w-xs sm:max-w-lg z-[99999999999999] text-center py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm" role="tooltip">
                   <?php 
-    esc_html_e( 'Sends automatic notification to website users when the product price drops. Notification will include product title and featured image.', 'intasela-pwa' );
+    esc_html_e( 'Sends automatic notification to space members when a new post is created.', 'intasela-pwa' );
     ?>
                 </span>
               </button>
             </h3>
             <p class="mt-0.5 text-xs text-gray-500">
               <?php 
-    esc_html_e( 'Sends notification to users when the product price drops.', 'intasela-pwa' );
+    esc_html_e( 'Sends notification to space members when a new post is created.', 'intasela-pwa' );
     ?>
             </p>
           </div>
           <div class="flex justify-between items-center">
             <div class="relative inline-block">
-              <input type="checkbox" id="pushAutomationWooPriceDrop" name="pushAutomationWooPriceDrop" class="relative w-11 h-6 !p-px bg-gray-100 !border-transparent !border text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-indigo-600 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none checked:bg-none checked:text-indigo-600 checked:border-indigo-600 focus:checked:border-indigo-600 before:inline-block before:!size-5 before:bg-white checked:before:bg-white checked:before:m-0 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 text-start" <?php 
-    checked( Utils::getSetting( 'pushAutomationWooPriceDrop' ), 'on' );
+              <input type="checkbox" id="pushAutomationFcNewPost" name="pushAutomationFcNewPost" class="relative w-11 h-6 !p-px bg-gray-100 !border-transparent !border text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-indigo-600 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none checked:bg-none checked:text-indigo-600 checked:border-indigo-600 focus:checked:border-indigo-600 before:inline-block before:!size-5 before:bg-white checked:before:bg-white checked:before:m-0 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 text-start" <?php 
+    checked( Utils::getSetting( 'pushAutomationFcNewPost' ), 'on' );
     ?>>
             </div>
           </div>
         </label>
       </div>
-      <div id="settingPushWooSalePrice" class="relative bg-white border border-gray-200 rounded-xl py-2 px-3 <?php 
+      <div id="settingPushFluentComment" class="relative bg-white border border-gray-200 rounded-xl py-2 px-3 <?php 
     echo ( !true ? '*:pointer-events-none [&_[data-dp-tooltip]]:pointer-events-auto cursor-pointer" data-needs-active-pro="true' : '' );
     ?>">
-        <label for="pushAutomationWooSalePrice" class="cursor-pointer flex gap-x-3">
+        <label for="pushAutomationFcNewComment" class="cursor-pointer flex gap-x-3">
           <div class="grow">
             <h3 class="flex items-center text-sm text-gray-800 font-semibold">
               <?php 
     echo ( !true ? '<span class="mr-1.5 inline-flex items-center gap-1.5 pt-[3px] pb-1 px-1.5 rounded-lg text-[10px] leading-none font-medium bg-indigo-600 text-white">Pro</span>' : '' );
     ?>
               <?php 
-    esc_html_e( 'WooCommerce Sale Price', 'intasela-pwa' );
+    esc_html_e( 'FluentCommunity New Comment', 'intasela-pwa' );
     ?>
               <button type="button" class="group/tooltip relative cursor-help ms-1 flex" tabindex="-1" data-dp-tooltip='{"trigger": "hover", "placement": "top"}'>
                 <svg class="inline-block size-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -482,378 +482,21 @@ if ( Utils::isPluginActive( 'woocommerce' ) ) {
                 </svg>
                 <span class="dp-tooltip-content group-data-[shown=true]/tooltip:opacity-100 group-data-[shown=true]/tooltip:visible opacity-0 transition-opacity inline-block absolute w-max invisible max-w-xs sm:max-w-lg z-[99999999999999] text-center py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm" role="tooltip">
                   <?php 
-    esc_html_e( 'Sends automatic notification to website users when the sale price is added to the product. Notification will include product title and featured image.', 'intasela-pwa' );
+    esc_html_e( 'Sends automatic notification to space members when a new comment is added on a post.', 'intasela-pwa' );
     ?>
                 </span>
               </button>
             </h3>
             <p class="mt-0.5 text-xs text-gray-500">
               <?php 
-    esc_html_e( 'Sends notification to users when sale price is added to product.', 'intasela-pwa' );
+    esc_html_e( 'Sends notification to space members when a new comment is posted.', 'intasela-pwa' );
     ?>
             </p>
           </div>
           <div class="flex justify-between items-center">
             <div class="relative inline-block">
-              <input type="checkbox" id="pushAutomationWooSalePrice" name="pushAutomationWooSalePrice" class="relative w-11 h-6 !p-px bg-gray-100 !border-transparent !border text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-indigo-600 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none checked:bg-none checked:text-indigo-600 checked:border-indigo-600 focus:checked:border-indigo-600 before:inline-block before:!size-5 before:bg-white checked:before:bg-white checked:before:m-0 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 text-start" <?php 
-    checked( Utils::getSetting( 'pushAutomationWooSalePrice' ), 'on' );
-    ?>>
-            </div>
-          </div>
-        </label>
-      </div>
-      <div id="settingPushWooBackInStock" class="relative bg-white border border-gray-200 rounded-xl py-2 px-3 <?php 
-    echo ( !true ? '*:pointer-events-none [&_[data-dp-tooltip]]:pointer-events-auto cursor-pointer" data-needs-active-pro="true' : '' );
-    ?>">
-        <label for="pushAutomationWooBackInStock" class="cursor-pointer flex gap-x-3">
-          <div class="grow">
-            <h3 class="flex items-center text-sm text-gray-800 font-semibold">
-              <?php 
-    echo ( !true ? '<span class="mr-1.5 inline-flex items-center gap-1.5 pt-[3px] pb-1 px-1.5 rounded-lg text-[10px] leading-none font-medium bg-indigo-600 text-white">Pro</span>' : '' );
-    ?>
-              <?php 
-    esc_html_e( 'WooCommerce Back In Stock', 'intasela-pwa' );
-    ?>
-              <button type="button" class="group/tooltip relative cursor-help ms-1 flex" tabindex="-1" data-dp-tooltip='{"trigger": "hover", "placement": "top"}'>
-                <svg class="inline-block size-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
-                  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
-                </svg>
-                <span class="dp-tooltip-content group-data-[shown=true]/tooltip:opacity-100 group-data-[shown=true]/tooltip:visible opacity-0 transition-opacity inline-block absolute w-max invisible max-w-xs sm:max-w-lg z-[99999999999999] text-center py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm" role="tooltip">
-                  <?php 
-    esc_html_e( 'Sends automatic notification to website users when the product is back in stock. Notification will include product title and featured image.', 'intasela-pwa' );
-    ?>
-                </span>
-              </button>
-            </h3>
-            <p class="mt-0.5 text-xs text-gray-500">
-              <?php 
-    esc_html_e( 'Sends notification to users when product is back in stock.', 'intasela-pwa' );
-    ?>
-            </p>
-          </div>
-          <div class="flex justify-between items-center">
-            <div class="relative inline-block">
-              <input type="checkbox" id="pushAutomationWooBackInStock" name="pushAutomationWooBackInStock" class="relative w-11 h-6 !p-px bg-gray-100 !border-transparent !border text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-indigo-600 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none checked:bg-none checked:text-indigo-600 checked:border-indigo-600 focus:checked:border-indigo-600 before:inline-block before:!size-5 before:bg-white checked:before:bg-white checked:before:m-0 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 text-start" <?php 
-    checked( Utils::getSetting( 'pushAutomationWooBackInStock' ), 'on' );
-    ?>>
-            </div>
-          </div>
-        </label>
-      </div>
-      <div id="settingPushWooOrderStatusUpdate" class="relative bg-white border border-gray-200 rounded-xl py-2 px-3 <?php 
-    echo ( !true ? '*:pointer-events-none [&_[data-dp-tooltip]]:pointer-events-auto cursor-pointer" data-needs-active-pro="true' : '' );
-    ?>">
-        <label for="pushAutomationWooOrderStatusUpdate" class="cursor-pointer flex gap-x-3">
-          <div class="grow">
-            <h3 class="flex items-center text-sm text-gray-800 font-semibold">
-              <?php 
-    echo ( !true ? '<span class="mr-1.5 inline-flex items-center gap-1.5 pt-[3px] pb-1 px-1.5 rounded-lg text-[10px] leading-none font-medium bg-indigo-600 text-white">Pro</span>' : '' );
-    ?>
-              <?php 
-    esc_html_e( 'WooCommerce Order Status Update', 'intasela-pwa' );
-    ?>
-              <button type="button" class="group/tooltip relative cursor-help ms-1 flex" tabindex="-1" data-dp-tooltip='{"trigger": "hover", "placement": "top"}'>
-                <svg class="inline-block size-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
-                  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
-                </svg>
-                <span class="dp-tooltip-content group-data-[shown=true]/tooltip:opacity-100 group-data-[shown=true]/tooltip:visible opacity-0 transition-opacity inline-block absolute w-max invisible max-w-xs sm:max-w-lg z-[99999999999999] text-center py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm" role="tooltip">
-                  <?php 
-    esc_html_e( 'Sends automatic notification to website users when the order status is updated. Notification will include what status change details.', 'intasela-pwa' );
-    ?>
-                </span>
-              </button>
-            </h3>
-            <p class="mt-0.5 text-xs text-gray-500">
-              <?php 
-    esc_html_e( 'Sends notification to users when the order status is updated.', 'intasela-pwa' );
-    ?>
-            </p>
-          </div>
-          <div class="flex justify-between items-center">
-            <div class="relative inline-block">
-              <input type="checkbox" id="pushAutomationWooOrderStatusUpdate" name="pushAutomationWooOrderStatusUpdate" class="relative w-11 h-6 !p-px bg-gray-100 !border-transparent !border text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-indigo-600 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none checked:bg-none checked:text-indigo-600 checked:border-indigo-600 focus:checked:border-indigo-600 before:inline-block before:!size-5 before:bg-white checked:before:bg-white checked:before:m-0 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 text-start" <?php 
-    checked( Utils::getSetting( 'pushAutomationWooOrderStatusUpdate' ), 'on' );
-    ?>>
-            </div>
-          </div>
-        </label>
-      </div>
-      <div id="settingPushWooNewOrder" class="relative bg-white border border-gray-200 rounded-xl py-2 px-3 <?php 
-    echo ( !true ? '*:pointer-events-none [&_[data-dp-tooltip]]:pointer-events-auto cursor-pointer" data-needs-active-pro="true' : '' );
-    ?>">
-        <label for="pushAutomationWooNewOrder" class="cursor-pointer flex gap-x-3">
-          <div class="grow">
-            <h3 class="flex items-center text-sm text-gray-800 font-semibold">
-              <?php 
-    echo ( !true ? '<span class="mr-1.5 inline-flex items-center gap-1.5 pt-[3px] pb-1 px-1.5 rounded-lg text-[10px] leading-none font-medium bg-indigo-600 text-white">Pro</span>' : '' );
-    ?>
-              <?php 
-    esc_html_e( 'WooCommerce New Order', 'intasela-pwa' );
-    ?>
-              <button type="button" class="group/tooltip relative cursor-help ms-1 flex" tabindex="-1" data-dp-tooltip='{"trigger": "hover", "placement": "top"}'>
-                <svg class="inline-block size-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
-                  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
-                </svg>
-                <span class="dp-tooltip-content group-data-[shown=true]/tooltip:opacity-100 group-data-[shown=true]/tooltip:visible opacity-0 transition-opacity inline-block absolute w-max invisible max-w-xs sm:max-w-lg z-[99999999999999] text-center py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm" role="tooltip">
-                  <?php 
-    esc_html_e( 'Sends automatic notification to admins when new order is placed. Notification will include order details.', 'intasela-pwa' );
-    ?>
-                </span>
-              </button>
-            </h3>
-            <p class="mt-0.5 text-xs text-gray-500">
-              <?php 
-    esc_html_e( 'Sends notification to admins when new order is placed.', 'intasela-pwa' );
-    ?>
-            </p>
-          </div>
-          <div class="flex justify-between items-center">
-            <div class="relative inline-block">
-              <input type="checkbox" id="pushAutomationWooNewOrder" name="pushAutomationWooNewOrder" class="relative w-11 h-6 !p-px bg-gray-100 !border-transparent !border text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-indigo-600 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none checked:bg-none checked:text-indigo-600 checked:border-indigo-600 focus:checked:border-indigo-600 before:inline-block before:!size-5 before:bg-white checked:before:bg-white checked:before:m-0 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 text-start" <?php 
-    checked( Utils::getSetting( 'pushAutomationWooNewOrder' ), 'on' );
-    ?>>
-            </div>
-          </div>
-        </label>
-      </div>
-      <div id="settingPushWooLowStock" class="relative bg-white border border-gray-200 rounded-xl py-2 px-3 <?php 
-    echo ( !true ? '*:pointer-events-none [&_[data-dp-tooltip]]:pointer-events-auto cursor-pointer" data-needs-active-pro="true' : '' );
-    ?>">
-        <label for="pushAutomationWooLowStock" class="cursor-pointer flex gap-x-3">
-          <div class="grow">
-            <h3 class="flex items-center text-sm text-gray-800 font-semibold">
-              <?php 
-    echo ( !true ? '<span class="mr-1.5 inline-flex items-center gap-1.5 pt-[3px] pb-1 px-1.5 rounded-lg text-[10px] leading-none font-medium bg-indigo-600 text-white">Pro</span>' : '' );
-    ?>
-              <?php 
-    esc_html_e( 'WooCommerce Low Stock', 'intasela-pwa' );
-    ?>
-              <button type="button" class="group/tooltip relative cursor-help ms-1 flex" tabindex="-1" data-dp-tooltip='{"trigger": "hover", "placement": "top"}'>
-                <svg class="inline-block size-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
-                  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
-                </svg>
-                <span class="dp-tooltip-content group-data-[shown=true]/tooltip:opacity-100 group-data-[shown=true]/tooltip:visible opacity-0 transition-opacity inline-block absolute w-max invisible max-w-xs sm:max-w-lg z-[99999999999999] text-center py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm" role="tooltip">
-                  <?php 
-    esc_html_e( 'Sends automatic notification to admins when a product is low in stock. Notification will include product details.', 'intasela-pwa' );
-    ?>
-                </span>
-              </button>
-            </h3>
-            <p class="mt-0.5 text-xs text-gray-500">
-              <?php 
-    esc_html_e( 'Sends notification to admins when a product is low in stock.', 'intasela-pwa' );
-    ?>
-            </p>
-          </div>
-          <div class="flex justify-between items-center">
-            <div class="relative inline-block">
-              <input type="checkbox" id="pushAutomationWooLowStock" name="pushAutomationWooLowStock" class="relative w-11 h-6 !p-px bg-gray-100 !border-transparent !border text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-indigo-600 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none checked:bg-none checked:text-indigo-600 checked:border-indigo-600 focus:checked:border-indigo-600 before:inline-block before:!size-5 before:bg-white checked:before:bg-white checked:before:m-0 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 text-start" <?php 
-    checked( Utils::getSetting( 'pushAutomationWooLowStock' ), 'on' );
-    ?>>
-            </div>
-          </div>
-        </label>
-      </div>
-      <?php 
-}
-?>
-      <?php 
-if ( Utils::isPluginActive( 'buddypress' ) ) {
-    ?>
-      <div id="settingPushBuddyMention" class="relative bg-white border border-gray-200 rounded-xl py-2 px-3 <?php 
-    echo ( !true ? '*:pointer-events-none [&_[data-dp-tooltip]]:pointer-events-auto cursor-pointer" data-needs-active-pro="true' : '' );
-    ?>">
-        <label for="pushAutomationBpMemberMention" class="cursor-pointer flex gap-x-3">
-          <div class="grow">
-            <h3 class="flex items-center text-sm text-gray-800 font-semibold">
-              <?php 
-    echo ( !true ? '<span class="mr-1.5 inline-flex items-center gap-1.5 pt-[3px] pb-1 px-1.5 rounded-lg text-[10px] leading-none font-medium bg-indigo-600 text-white">Pro</span>' : '' );
-    ?>
-              <?php 
-    esc_html_e( 'BuddyPress Member Mention', 'intasela-pwa' );
-    ?>
-              <button type="button" class="group/tooltip relative cursor-help ms-1 flex" tabindex="-1" data-dp-tooltip='{"trigger": "hover", "placement": "top"}'>
-                <svg class="inline-block size-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
-                  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
-                </svg>
-                <span class="dp-tooltip-content group-data-[shown=true]/tooltip:opacity-100 group-data-[shown=true]/tooltip:visible opacity-0 transition-opacity inline-block absolute w-max invisible max-w-xs sm:max-w-lg z-[99999999999999] text-center py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm" role="tooltip">
-                  <?php 
-    esc_html_e( 'Sends automatic notification to users when a member mentions someone in an update @username.', 'intasela-pwa' );
-    ?>
-                </span>
-              </button>
-            </h3>
-            <p class="mt-0.5 text-xs text-gray-500">
-              <?php 
-    esc_html_e( 'Sends notification to users when they are mentioned by a member.', 'intasela-pwa' );
-    ?>
-            </p>
-          </div>
-          <div class="flex justify-between items-center">
-            <div class="relative inline-block">
-              <input type="checkbox" id="pushAutomationBpMemberMention" name="pushAutomationBpMemberMention" class="relative w-11 h-6 !p-px bg-gray-100 !border-transparent !border text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-indigo-600 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none checked:bg-none checked:text-indigo-600 checked:border-indigo-600 focus:checked:border-indigo-600 before:inline-block before:!size-5 before:bg-white checked:before:bg-white checked:before:m-0 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 text-start" <?php 
-    checked( Utils::getSetting( 'pushAutomationBpMemberMention' ), 'on' );
-    ?>>
-            </div>
-          </div>
-        </label>
-      </div>
-      <div id="settingPushBuddyReply" class="relative bg-white border border-gray-200 rounded-xl py-2 px-3 <?php 
-    echo ( !true ? '*:pointer-events-none [&_[data-dp-tooltip]]:pointer-events-auto cursor-pointer" data-needs-active-pro="true' : '' );
-    ?>">
-        <label for="pushAutomationBpMemberReply" class="cursor-pointer flex gap-x-3">
-          <div class="grow">
-            <h3 class="flex items-center text-sm text-gray-800 font-semibold">
-              <?php 
-    echo ( !true ? '<span class="mr-1.5 inline-flex items-center gap-1.5 pt-[3px] pb-1 px-1.5 rounded-lg text-[10px] leading-none font-medium bg-indigo-600 text-white">Pro</span>' : '' );
-    ?>
-              <?php 
-    esc_html_e( 'BuddyPress Member Reply', 'intasela-pwa' );
-    ?>
-              <button type="button" class="group/tooltip relative cursor-help ms-1 flex" tabindex="-1" data-dp-tooltip='{"trigger": "hover", "placement": "top"}'>
-                <svg class="inline-block size-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
-                  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
-                </svg>
-                <span class="dp-tooltip-content group-data-[shown=true]/tooltip:opacity-100 group-data-[shown=true]/tooltip:visible opacity-0 transition-opacity inline-block absolute w-max invisible max-w-xs sm:max-w-lg z-[99999999999999] text-center py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm" role="tooltip">
-                  <?php 
-    esc_html_e( 'Sends automatic notification to users when a member replies to an update or comment.', 'intasela-pwa' );
-    ?>
-                </span>
-              </button>
-            </h3>
-            <p class="mt-0.5 text-xs text-gray-500">
-              <?php 
-    esc_html_e( 'Sends notification to users when a member replies.', 'intasela-pwa' );
-    ?>
-            </p>
-          </div>
-          <div class="flex justify-between items-center">
-            <div class="relative inline-block">
-              <input type="checkbox" id="pushAutomationBpMemberReply" name="pushAutomationBpMemberReply" class="relative w-11 h-6 !p-px bg-gray-100 !border-transparent !border text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-indigo-600 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none checked:bg-none checked:text-indigo-600 checked:border-indigo-600 focus:checked:border-indigo-600 before:inline-block before:!size-5 before:bg-white checked:before:bg-white checked:before:m-0 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 text-start" <?php 
-    checked( Utils::getSetting( 'pushAutomationBpMemberReply' ), 'on' );
-    ?>>
-            </div>
-          </div>
-        </label>
-      </div>
-      <div id="settingPushBuddyNewMessage" class="relative bg-white border border-gray-200 rounded-xl py-2 px-3 <?php 
-    echo ( !true ? '*:pointer-events-none [&_[data-dp-tooltip]]:pointer-events-auto cursor-pointer" data-needs-active-pro="true' : '' );
-    ?>">
-        <label for="pushAutomationBpNewMessage" class="cursor-pointer flex gap-x-3">
-          <div class="grow">
-            <h3 class="flex items-center text-sm text-gray-800 font-semibold">
-              <?php 
-    echo ( !true ? '<span class="mr-1.5 inline-flex items-center gap-1.5 pt-[3px] pb-1 px-1.5 rounded-lg text-[10px] leading-none font-medium bg-indigo-600 text-white">Pro</span>' : '' );
-    ?>
-              <?php 
-    esc_html_e( 'BuddyPress New Message', 'intasela-pwa' );
-    ?>
-              <button type="button" class="group/tooltip relative cursor-help ms-1 flex" tabindex="-1" data-dp-tooltip='{"trigger": "hover", "placement": "top"}'>
-                <svg class="inline-block size-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
-                  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
-                </svg>
-                <span class="dp-tooltip-content group-data-[shown=true]/tooltip:opacity-100 group-data-[shown=true]/tooltip:visible opacity-0 transition-opacity inline-block absolute w-max invisible max-w-xs sm:max-w-lg z-[99999999999999] text-center py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm" role="tooltip">
-                  <?php 
-    esc_html_e( 'Sends automatic notification to users when a new message is received in their DMs.', 'intasela-pwa' );
-    ?>
-                </span>
-              </button>
-            </h3>
-            <p class="mt-0.5 text-xs text-gray-500">
-              <?php 
-    esc_html_e( 'Sends notification to users when a new message is received.', 'intasela-pwa' );
-    ?>
-            </p>
-          </div>
-          <div class="flex justify-between items-center">
-            <div class="relative inline-block">
-              <input type="checkbox" id="pushAutomationBpNewMessage" name="pushAutomationBpNewMessage" class="relative w-11 h-6 !p-px bg-gray-100 !border-transparent !border text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-indigo-600 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none checked:bg-none checked:text-indigo-600 checked:border-indigo-600 focus:checked:border-indigo-600 before:inline-block before:!size-5 before:bg-white checked:before:bg-white checked:before:m-0 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 text-start" <?php 
-    checked( Utils::getSetting( 'pushAutomationBpNewMessage' ), 'on' );
-    ?>>
-            </div>
-          </div>
-        </label>
-      </div>
-      <div id="settingPushBuddyFriendRequest" class="relative bg-white border border-gray-200 rounded-xl py-2 px-3 <?php 
-    echo ( !true ? '*:pointer-events-none [&_[data-dp-tooltip]]:pointer-events-auto cursor-pointer" data-needs-active-pro="true' : '' );
-    ?>">
-        <label for="pushAutomationBpFriendRequest" class="cursor-pointer flex gap-x-3">
-          <div class="grow">
-            <h3 class="flex items-center text-sm text-gray-800 font-semibold">
-              <?php 
-    echo ( !true ? '<span class="mr-1.5 inline-flex items-center gap-1.5 pt-[3px] pb-1 px-1.5 rounded-lg text-[10px] leading-none font-medium bg-indigo-600 text-white">Pro</span>' : '' );
-    ?>
-              <?php 
-    esc_html_e( 'BuddyPress Friend Request', 'intasela-pwa' );
-    ?>
-              <button type="button" class="group/tooltip relative cursor-help ms-1 flex" tabindex="-1" data-dp-tooltip='{"trigger": "hover", "placement": "top"}'>
-                <svg class="inline-block size-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
-                  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
-                </svg>
-                <span class="dp-tooltip-content group-data-[shown=true]/tooltip:opacity-100 group-data-[shown=true]/tooltip:visible opacity-0 transition-opacity inline-block absolute w-max invisible max-w-xs sm:max-w-lg z-[99999999999999] text-center py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm" role="tooltip">
-                  <?php 
-    esc_html_e( 'Sends automatic notification to users when a new friend request is received.', 'intasela-pwa' );
-    ?>
-                </span>
-              </button>
-            </h3>
-            <p class="mt-0.5 text-xs text-gray-500">
-              <?php 
-    esc_html_e( 'Sends notification to users when a new friend request is received.', 'intasela-pwa' );
-    ?>
-            </p>
-          </div>
-          <div class="flex justify-between items-center">
-            <div class="relative inline-block">
-              <input type="checkbox" id="pushAutomationBpFriendRequest" name="pushAutomationBpFriendRequest" class="relative w-11 h-6 !p-px bg-gray-100 !border-transparent !border text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-indigo-600 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none checked:bg-none checked:text-indigo-600 checked:border-indigo-600 focus:checked:border-indigo-600 before:inline-block before:!size-5 before:bg-white checked:before:bg-white checked:before:m-0 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 text-start" <?php 
-    checked( Utils::getSetting( 'pushAutomationBpFriendRequest' ), 'on' );
-    ?>>
-            </div>
-          </div>
-        </label>
-      </div>
-      <div id="settingPushBuddyFriendAccepted" class="relative bg-white border border-gray-200 rounded-xl py-2 px-3 <?php 
-    echo ( !true ? '*:pointer-events-none [&_[data-dp-tooltip]]:pointer-events-auto cursor-pointer" data-needs-active-pro="true' : '' );
-    ?>">
-        <label for="pushAutomationBpFriendAccepted" class="cursor-pointer flex gap-x-3">
-          <div class="grow">
-            <h3 class="flex items-center text-sm text-gray-800 font-semibold">
-              <?php 
-    echo ( !true ? '<span class="mr-1.5 inline-flex items-center gap-1.5 pt-[3px] pb-1 px-1.5 rounded-lg text-[10px] leading-none font-medium bg-indigo-600 text-white">Pro</span>' : '' );
-    ?>
-              <?php 
-    esc_html_e( 'BuddyPress Friend Accepted', 'intasela-pwa' );
-    ?>
-              <button type="button" class="group/tooltip relative cursor-help ms-1 flex" tabindex="-1" data-dp-tooltip='{"trigger": "hover", "placement": "top"}'>
-                <svg class="inline-block size-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
-                  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
-                </svg>
-                <span class="dp-tooltip-content group-data-[shown=true]/tooltip:opacity-100 group-data-[shown=true]/tooltip:visible opacity-0 transition-opacity inline-block absolute w-max invisible max-w-xs sm:max-w-lg z-[99999999999999] text-center py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm" role="tooltip">
-                  <?php 
-    esc_html_e( 'Sends automatic notification to users when the friend request is accepted.', 'intasela-pwa' );
-    ?>
-                </span>
-              </button>
-            </h3>
-            <p class="mt-0.5 text-xs text-gray-500">
-              <?php 
-    esc_html_e( 'Sends notification to users when the friend request is accepted.', 'intasela-pwa' );
-    ?>
-            </p>
-          </div>
-          <div class="flex justify-between items-center">
-            <div class="relative inline-block">
-              <input type="checkbox" id="pushAutomationBpFriendAccepted" name="pushAutomationBpFriendAccepted" class="relative w-11 h-6 !p-px bg-gray-100 !border-transparent !border text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-indigo-600 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none checked:bg-none checked:text-indigo-600 checked:border-indigo-600 focus:checked:border-indigo-600 before:inline-block before:!size-5 before:bg-white checked:before:bg-white checked:before:m-0 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 text-start" <?php 
-    checked( Utils::getSetting( 'pushAutomationBpFriendAccepted' ), 'on' );
+              <input type="checkbox" id="pushAutomationFcNewComment" name="pushAutomationFcNewComment" class="relative w-11 h-6 !p-px bg-gray-100 !border-transparent !border text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-indigo-600 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none checked:bg-none checked:text-indigo-600 checked:border-indigo-600 focus:checked:border-indigo-600 before:inline-block before:!size-5 before:bg-white checked:before:bg-white checked:before:m-0 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 text-start" <?php 
+    checked( Utils::getSetting( 'pushAutomationFcNewComment' ), 'on' );
     ?>>
             </div>
           </div>

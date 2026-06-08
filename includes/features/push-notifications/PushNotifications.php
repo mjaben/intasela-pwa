@@ -8,10 +8,12 @@ if ( !defined( 'ABSPATH' ) ) {
 }
 require_once __DIR__ . '/classes/Subscription.php';
 require_once __DIR__ . '/classes/Notifications.php';
+require_once __DIR__ . '/classes/AutomatedNotifications.php';
 class PushNotifications {
     public function __construct() {
         new PushNotifications\Subscription();
         new PushNotifications\Notifications();
+        new PushNotifications\AutomatedNotifications();
     }
 
     public static function generateVapidKeys() {
