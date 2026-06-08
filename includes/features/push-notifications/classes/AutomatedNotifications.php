@@ -19,6 +19,7 @@ class AutomatedNotifications {
         if ( defined( 'FLUENT_COMMUNITY_PLUGIN_VERSION' ) ) {
             add_action( 'fluent_community/feed/created', [$this, 'handleFluentNewPost'], 10, 1 );
             add_action( 'fluent_community/comment_added', [$this, 'handleFluentNewComment'], 10, 3 );
+            add_action( 'fluent_community/feed_mentioned', [$this, 'handleFluentFeedMentioned'], 10, 2 );
         }
     }
 
@@ -134,47 +135,88 @@ class AutomatedNotifications {
     }
 
     /**
-     * Handle FluentCommunity new comment.
+     * Handle FluentCommunity mentions in a feed.
      */
-    public function handleFluentNewComment( $comment, $feed, $mentions ) {
-        if ( Utils::getSetting( 'pushAutomationFcNewComment' ) !== 'on' ) {
+    public function handleFluentFeedMentioned( $feed, $mentioned_users ) {
+        if ( Utils::getSetting( 'pushAutomationFcMemberMention' ) !== 'on' ) {
             return;
         }
 
-        $author = get_userdata( $comment->user_id );
+        if ( empty( $mentioned_users ) ) {
+            return;
+        }
+
+        $author = get_userdata( $feed->user_id );
         $author_name = $author ? $author->display_name : 'Someone';
 
-        $usersToNotify = [];
+        // Extract user IDs
+        $userIds = array_map(function($u) { return is_object($u) ? $u->ID : (is_array($u) ? $u['ID'] : $u); }, $mentioned_users);
+        $userIds = array_diff($userIds, [$feed->user_id]);
 
-        // Notify the post author
-        if ( $feed->user_id != $comment->user_id ) {
-            $usersToNotify[] = $feed->user_id;
-        }
-
-        // Notify parent comment author if it's a reply
-        if ( !empty( $comment->parent_id ) ) {
-            try {
-                $parent = \FluentCommunity\App\Models\Comment::find( $comment->parent_id );
-                if ( $parent && $parent->user_id != $comment->user_id ) {
-                    $usersToNotify[] = $parent->user_id;
-                }
-            } catch ( \Exception $e ) {}
-        }
-
-        $usersToNotify = array_unique( $usersToNotify );
-
-        if ( empty( $usersToNotify ) ) {
+        if ( empty( $userIds ) ) {
             return;
         }
 
         $space_slug = isset( $feed->space->slug ) ? $feed->space->slug : '';
 
         $notificationData = [
-            'title' => esc_html__( 'New Comment on Post', 'intasela-pwa' ),
-            'body'  => sprintf( esc_html__( '%s commented on a post.', 'intasela-pwa' ), $author_name ),
+            'title' => esc_html__( 'You were mentioned', 'intasela-pwa' ),
+            'body'  => sprintf( esc_html__( '%s mentioned you in a post.', 'intasela-pwa' ), $author_name ),
             'data'  => [ 'url' => \FluentCommunity\App\Services\Helper::baseUrl( 'space/' . $space_slug . '/post/' . $feed->id ) ],
         ];
 
-        Notifications::sendPushNotification( array_values( $usersToNotify ), $notificationData );
+        Notifications::sendPushNotification( array_values( $userIds ), $notificationData );
+    }
+
+    /**
+     * Handle FluentCommunity new comment.
+     */
+    public function handleFluentNewComment( $comment, $feed, $mentions ) {
+        $author = get_userdata( $comment->user_id );
+        $author_name = $author ? $author->display_name : 'Someone';
+        $space_slug = isset( $feed->space->slug ) ? $feed->space->slug : '';
+        $postUrl = \FluentCommunity\App\Services\Helper::baseUrl( 'space/' . $space_slug . '/post/' . $feed->id );
+
+        // 1. Mentions inside the comment
+        if ( Utils::getSetting( 'pushAutomationFcMemberMention' ) === 'on' && !empty( $mentions ) ) {
+            $mentionedUserIds = array_map(function($u) { return is_object($u) ? $u->ID : (is_array($u) ? $u['ID'] : $u); }, $mentions);
+            $mentionedUserIds = array_diff($mentionedUserIds, [$comment->user_id]);
+
+            if ( !empty( $mentionedUserIds ) ) {
+                $mentionData = [
+                    'title' => esc_html__( 'You were mentioned', 'intasela-pwa' ),
+                    'body'  => sprintf( esc_html__( '%s mentioned you in a comment.', 'intasela-pwa' ), $author_name ),
+                    'data'  => [ 'url' => $postUrl ],
+                ];
+                Notifications::sendPushNotification( array_values( $mentionedUserIds ), $mentionData );
+            }
+        }
+
+        // 2. Notify Post Author
+        if ( Utils::getSetting( 'pushAutomationFcAuthorComment' ) === 'on' ) {
+            if ( $feed->user_id != $comment->user_id ) {
+                $authorData = [
+                    'title' => esc_html__( 'New Comment on your Post', 'intasela-pwa' ),
+                    'body'  => sprintf( esc_html__( '%s commented on your post.', 'intasela-pwa' ), $author_name ),
+                    'data'  => [ 'url' => $postUrl ],
+                ];
+                Notifications::sendPushNotification( (int) $feed->user_id, $authorData );
+            }
+        }
+
+        // 3. Notify Parent Commenter (Reply)
+        if ( Utils::getSetting( 'pushAutomationFcMemberReply' ) === 'on' && !empty( $comment->parent_id ) ) {
+            try {
+                $parent = \FluentCommunity\App\Models\Comment::find( $comment->parent_id );
+                if ( $parent && $parent->user_id != $comment->user_id && $parent->user_id != $feed->user_id ) {
+                    $replyData = [
+                        'title' => esc_html__( 'New Reply to your Comment', 'intasela-pwa' ),
+                        'body'  => sprintf( esc_html__( '%s replied to your comment.', 'intasela-pwa' ), $author_name ),
+                        'data'  => [ 'url' => $postUrl ],
+                    ];
+                    Notifications::sendPushNotification( (int) $parent->user_id, $replyData );
+                }
+            } catch ( \Exception $e ) {}
+        }
     }
 }

@@ -424,7 +424,7 @@ if ( Utils::isWpCommentsEnabled() ) {
       <?php 
 if ( defined( 'FLUENT_COMMUNITY_PLUGIN_VERSION' ) ) {
     ?>
-      <div id="settingPushFluentPost" class="relative bg-white border border-gray-200 rounded-xl py-2 px-3 <?php 
+      <div id="settingPushFcPost" class="relative bg-white border border-gray-200 rounded-xl py-2 px-3 <?php 
     echo ( !true ? '*:pointer-events-none [&_[data-dp-tooltip]]:pointer-events-auto cursor-pointer" data-needs-active-pro="true' : '' );
     ?>">
         <label for="pushAutomationFcNewPost" class="cursor-pointer flex gap-x-3">
@@ -463,17 +463,18 @@ if ( defined( 'FLUENT_COMMUNITY_PLUGIN_VERSION' ) ) {
           </div>
         </label>
       </div>
-      <div id="settingPushFluentComment" class="relative bg-white border border-gray-200 rounded-xl py-2 px-3 <?php 
+
+      <div id="settingPushFcAuthorComment" class="relative bg-white border border-gray-200 rounded-xl py-2 px-3 <?php 
     echo ( !true ? '*:pointer-events-none [&_[data-dp-tooltip]]:pointer-events-auto cursor-pointer" data-needs-active-pro="true' : '' );
     ?>">
-        <label for="pushAutomationFcNewComment" class="cursor-pointer flex gap-x-3">
+        <label for="pushAutomationFcAuthorComment" class="cursor-pointer flex gap-x-3">
           <div class="grow">
             <h3 class="flex items-center text-sm text-gray-800 font-semibold">
               <?php 
     echo ( !true ? '<span class="mr-1.5 inline-flex items-center gap-1.5 pt-[3px] pb-1 px-1.5 rounded-lg text-[10px] leading-none font-medium bg-indigo-600 text-white">Pro</span>' : '' );
     ?>
               <?php 
-    esc_html_e( 'FluentCommunity New Comment', 'intasela-pwa' );
+    esc_html_e( 'FluentCommunity Author Comment', 'intasela-pwa' );
     ?>
               <button type="button" class="group/tooltip relative cursor-help ms-1 flex" tabindex="-1" data-dp-tooltip='{"trigger": "hover", "placement": "top"}'>
                 <svg class="inline-block size-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -482,43 +483,38 @@ if ( defined( 'FLUENT_COMMUNITY_PLUGIN_VERSION' ) ) {
                 </svg>
                 <span class="dp-tooltip-content group-data-[shown=true]/tooltip:opacity-100 group-data-[shown=true]/tooltip:visible opacity-0 transition-opacity inline-block absolute w-max invisible max-w-xs sm:max-w-lg z-[99999999999999] text-center py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm" role="tooltip">
                   <?php 
-    esc_html_e( 'Sends automatic notification to space members when a new comment is added on a post.', 'intasela-pwa' );
+    esc_html_e( 'Sends automatic notification to the post author when a comment is added to their post.', 'intasela-pwa' );
     ?>
                 </span>
               </button>
             </h3>
             <p class="mt-0.5 text-xs text-gray-500">
               <?php 
-    esc_html_e( 'Sends notification to space members when a new comment is posted.', 'intasela-pwa' );
+    esc_html_e( 'Sends notification to the post author when a new comment is posted.', 'intasela-pwa' );
     ?>
             </p>
           </div>
           <div class="flex justify-between items-center">
             <div class="relative inline-block">
-              <input type="checkbox" id="pushAutomationFcNewComment" name="pushAutomationFcNewComment" class="relative w-11 h-6 !p-px bg-gray-100 !border-transparent !border text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-indigo-600 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none checked:bg-none checked:text-indigo-600 checked:border-indigo-600 focus:checked:border-indigo-600 before:inline-block before:!size-5 before:bg-white checked:before:bg-white checked:before:m-0 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 text-start" <?php 
-    checked( Utils::getSetting( 'pushAutomationFcNewComment' ), 'on' );
+              <input type="checkbox" id="pushAutomationFcAuthorComment" name="pushAutomationFcAuthorComment" class="relative w-11 h-6 !p-px bg-gray-100 !border-transparent !border text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-indigo-600 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none checked:bg-none checked:text-indigo-600 checked:border-indigo-600 focus:checked:border-indigo-600 before:inline-block before:!size-5 before:bg-white checked:before:bg-white checked:before:m-0 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 text-start" <?php 
+    checked( Utils::getSetting( 'pushAutomationFcAuthorComment' ), 'on' );
     ?>>
             </div>
           </div>
         </label>
       </div>
-      <?php 
-}
-?>
-      <?php 
-if ( Utils::isPluginActive( 'fluentcommunity' ) ) {
-    ?>
-      <div id="settingPushFluentPost" class="relative bg-white border border-gray-200 rounded-xl py-2 px-3 <?php 
+
+      <div id="settingPushFcMemberReply" class="relative bg-white border border-gray-200 rounded-xl py-2 px-3 <?php 
     echo ( !true ? '*:pointer-events-none [&_[data-dp-tooltip]]:pointer-events-auto cursor-pointer" data-needs-active-pro="true' : '' );
     ?>">
-        <label for="pushAutomationFcNewPost" class="cursor-pointer flex gap-x-3">
+        <label for="pushAutomationFcMemberReply" class="cursor-pointer flex gap-x-3">
           <div class="grow">
             <h3 class="flex items-center text-sm text-gray-800 font-semibold">
               <?php 
     echo ( !true ? '<span class="mr-1.5 inline-flex items-center gap-1.5 pt-[3px] pb-1 px-1.5 rounded-lg text-[10px] leading-none font-medium bg-indigo-600 text-white">Pro</span>' : '' );
     ?>
               <?php 
-    esc_html_e( 'FluentCommunity New Post', 'intasela-pwa' );
+    esc_html_e( 'FluentCommunity Member Reply', 'intasela-pwa' );
     ?>
               <button type="button" class="group/tooltip relative cursor-help ms-1 flex" tabindex="-1" data-dp-tooltip='{"trigger": "hover", "placement": "top"}'>
                 <svg class="inline-block size-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -527,37 +523,38 @@ if ( Utils::isPluginActive( 'fluentcommunity' ) ) {
                 </svg>
                 <span class="dp-tooltip-content group-data-[shown=true]/tooltip:opacity-100 group-data-[shown=true]/tooltip:visible opacity-0 transition-opacity inline-block absolute w-max invisible max-w-xs sm:max-w-lg z-[99999999999999] text-center py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm" role="tooltip">
                   <?php 
-    esc_html_e( 'Sends automatic notification to space members when a new post is created.', 'intasela-pwa' );
+    esc_html_e( 'Sends automatic notification to users when a member replies to their comment.', 'intasela-pwa' );
     ?>
                 </span>
               </button>
             </h3>
             <p class="mt-0.5 text-xs text-gray-500">
               <?php 
-    esc_html_e( 'Sends notification to space members when a new post is created.', 'intasela-pwa' );
+    esc_html_e( 'Sends notification to users when a member replies.', 'intasela-pwa' );
     ?>
             </p>
           </div>
           <div class="flex justify-between items-center">
             <div class="relative inline-block">
-              <input type="checkbox" id="pushAutomationFcNewPost" name="pushAutomationFcNewPost" class="relative w-11 h-6 !p-px bg-gray-100 !border-transparent !border text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-indigo-600 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none checked:bg-none checked:text-indigo-600 checked:border-indigo-600 focus:checked:border-indigo-600 before:inline-block before:!size-5 before:bg-white checked:before:bg-white checked:before:m-0 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 text-start" <?php 
-    checked( Utils::getSetting( 'pushAutomationFcNewPost' ), 'on' );
+              <input type="checkbox" id="pushAutomationFcMemberReply" name="pushAutomationFcMemberReply" class="relative w-11 h-6 !p-px bg-gray-100 !border-transparent !border text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-indigo-600 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none checked:bg-none checked:text-indigo-600 checked:border-indigo-600 focus:checked:border-indigo-600 before:inline-block before:!size-5 before:bg-white checked:before:bg-white checked:before:m-0 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 text-start" <?php 
+    checked( Utils::getSetting( 'pushAutomationFcMemberReply' ), 'on' );
     ?>>
             </div>
           </div>
         </label>
       </div>
-      <div id="settingPushFluentComment" class="relative bg-white border border-gray-200 rounded-xl py-2 px-3 <?php 
+
+      <div id="settingPushFcMemberMention" class="relative bg-white border border-gray-200 rounded-xl py-2 px-3 <?php 
     echo ( !true ? '*:pointer-events-none [&_[data-dp-tooltip]]:pointer-events-auto cursor-pointer" data-needs-active-pro="true' : '' );
     ?>">
-        <label for="pushAutomationFcNewComment" class="cursor-pointer flex gap-x-3">
+        <label for="pushAutomationFcMemberMention" class="cursor-pointer flex gap-x-3">
           <div class="grow">
             <h3 class="flex items-center text-sm text-gray-800 font-semibold">
               <?php 
     echo ( !true ? '<span class="mr-1.5 inline-flex items-center gap-1.5 pt-[3px] pb-1 px-1.5 rounded-lg text-[10px] leading-none font-medium bg-indigo-600 text-white">Pro</span>' : '' );
     ?>
               <?php 
-    esc_html_e( 'FluentCommunity New Comment', 'intasela-pwa' );
+    esc_html_e( 'FluentCommunity Member Mention', 'intasela-pwa' );
     ?>
               <button type="button" class="group/tooltip relative cursor-help ms-1 flex" tabindex="-1" data-dp-tooltip='{"trigger": "hover", "placement": "top"}'>
                 <svg class="inline-block size-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
@@ -566,21 +563,21 @@ if ( Utils::isPluginActive( 'fluentcommunity' ) ) {
                 </svg>
                 <span class="dp-tooltip-content group-data-[shown=true]/tooltip:opacity-100 group-data-[shown=true]/tooltip:visible opacity-0 transition-opacity inline-block absolute w-max invisible max-w-xs sm:max-w-lg z-[99999999999999] text-center py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm" role="tooltip">
                   <?php 
-    esc_html_e( 'Sends automatic notification to space members when a new comment is added on a post.', 'intasela-pwa' );
+    esc_html_e( 'Sends automatic notification to users when they are mentioned in a post or comment.', 'intasela-pwa' );
     ?>
                 </span>
               </button>
             </h3>
             <p class="mt-0.5 text-xs text-gray-500">
               <?php 
-    esc_html_e( 'Sends notification to space members when a new comment is posted.', 'intasela-pwa' );
+    esc_html_e( 'Sends notification to users when they are mentioned.', 'intasela-pwa' );
     ?>
             </p>
           </div>
           <div class="flex justify-between items-center">
             <div class="relative inline-block">
-              <input type="checkbox" id="pushAutomationFcNewComment" name="pushAutomationFcNewComment" class="relative w-11 h-6 !p-px bg-gray-100 !border-transparent !border text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-indigo-600 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none checked:bg-none checked:text-indigo-600 checked:border-indigo-600 focus:checked:border-indigo-600 before:inline-block before:!size-5 before:bg-white checked:before:bg-white checked:before:m-0 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 text-start" <?php 
-    checked( Utils::getSetting( 'pushAutomationFcNewComment' ), 'on' );
+              <input type="checkbox" id="pushAutomationFcMemberMention" name="pushAutomationFcMemberMention" class="relative w-11 h-6 !p-px bg-gray-100 !border-transparent !border text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-indigo-600 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none checked:bg-none checked:text-indigo-600 checked:border-indigo-600 focus:checked:border-indigo-600 before:inline-block before:!size-5 before:bg-white checked:before:bg-white checked:before:m-0 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 text-start" <?php 
+    checked( Utils::getSetting( 'pushAutomationFcMemberMention' ), 'on' );
     ?>>
             </div>
           </div>
