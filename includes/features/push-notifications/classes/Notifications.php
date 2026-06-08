@@ -185,9 +185,14 @@ class Notifications {
             }
             return $reports;
         } catch ( \Throwable $e ) {
+            $error_message = $e->getMessage() . ' in ' . $e->getFile() . ':' . $e->getLine();
+            $log_file = defined('INTASELA_PWA_DIR_PATH') ? INTASELA_PWA_DIR_PATH . 'pwa-error.log' : __DIR__ . '/../../../../pwa-error.log';
+            $log_entry = "[" . current_time('mysql') . "] PWA Push Error: " . $error_message . "\n" . $e->getTraceAsString() . "\n\n";
+            @file_put_contents($log_file, $log_entry, FILE_APPEND);
+            
             return [
                 'error'   => true,
-                'message' => $e->getMessage() . ' in ' . $e->getFile() . ':' . $e->getLine(),
+                'message' => $error_message,
             ];
         }
     }
