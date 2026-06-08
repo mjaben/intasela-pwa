@@ -26,7 +26,6 @@ echo esc_attr( $intasela_pwaAppName );
 
  <!-- Apple Specific Meta Tags -->
  <meta name="apple-mobile-web-app-capable" content="yes">
- <meta name="apple-mobile-web-app-status-bar-style" content="default">
  <meta name="apple-mobile-web-app-title" content="<?php 
 echo esc_attr( $intasela_pwaAppName );
 ?>">
