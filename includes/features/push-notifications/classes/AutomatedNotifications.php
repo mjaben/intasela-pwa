@@ -21,6 +21,9 @@ class AutomatedNotifications {
             add_action( 'fluent_community/comment_added', [$this, 'handleFluentNewComment'], 10, 3 );
             add_action( 'fluent_community/feed_mentioned', [$this, 'handleFluentFeedMentioned'], 10, 2 );
         }
+
+        // FluentMessaging Hooks (Chat)
+        add_action( 'fluent_messaging/after_add_message', [$this, 'handleFluentNewMessage'], 10, 1 );
     }
 
     /**
@@ -240,5 +243,43 @@ class AutomatedNotifications {
                 $notifiedUsers[] = $feed->user_id;
             }
         }
+    }
+
+    /**
+     * Handle FluentMessaging new chat message.
+     */
+    public function handleFluentNewMessage( $message ) {
+        if ( Utils::getSetting( 'pushAutomationFcNewMessage' ) !== 'on' ) {
+            return;
+        }
+
+        // Only process direct/group messages, avoid spamming large community chat rooms
+        if ( !empty( $message->thread->space_id ) ) {
+            return;
+        }
+
+        $sender_id = $message->user_id;
+        
+        // Find all active recipients in this thread, excluding the sender
+        $recipientIds = \FluentMessaging\App\Models\ThreadUser::where( 'thread_id', $message->thread_id )
+            ->where( 'user_id', '!=', $sender_id )
+            ->where( 'status', 'active' )
+            ->pluck( 'user_id' )
+            ->toArray();
+
+        if ( empty( $recipientIds ) ) {
+            return;
+        }
+
+        $author = get_userdata( $sender_id );
+        $author_name = $author ? $author->display_name : 'Someone';
+
+        $notificationData = [
+            'title' => esc_html__( 'New Chat Message', 'intasela-pwa' ),
+            'body'  => sprintf( esc_html__( '%s sent you a message.', 'intasela-pwa' ), $author_name ),
+            'data'  => [ 'url' => \FluentCommunity\App\Services\Helper::baseUrl( 'chat' ) ],
+        ];
+
+        Notifications::sendPushNotification( $recipientIds, $notificationData );
     }
 }
