@@ -152,10 +152,10 @@ class Notifications {
             // Queue notifications
             foreach ( $subscribers as $subscriber ) {
                 $subscription = Subscription::create( [
-                    'endpoint'        => $subscriber['endpoint'],
-                    'publicKey'       => $subscriber['p256dh_key'],
-                    'authToken'       => $subscriber['auth_key'],
-                    'contentEncoding' => $subscriber['content_encoding'] ? $subscriber['content_encoding'] : 'aesgcm',
+                    'endpoint'        => $subscriber['endpoint'] ?? '',
+                    'publicKey'       => $subscriber['p256dh_key'] ?? '',
+                    'authToken'       => $subscriber['auth_key'] ?? '',
+                    'contentEncoding' => !empty($subscriber['content_encoding']) ? $subscriber['content_encoding'] : 'aesgcm',
                 ] );
                 $webPush->queueNotification( $subscription, json_encode( $notificationData ) );
             }
@@ -184,10 +184,10 @@ class Notifications {
                 }
             }
             return $reports;
-        } catch ( \Exception $e ) {
+        } catch ( \Throwable $e ) {
             return [
                 'error'   => true,
-                'message' => $e->getMessage(),
+                'message' => $e->getMessage() . ' in ' . $e->getFile() . ':' . $e->getLine(),
             ];
         }
     }
