@@ -210,6 +210,16 @@ class FluentCommunity {
         ]);
         $this->intasela_pwa_print_script("{$plugin_url}/assets/js/installButton.js", $version);
 
+        // --- Pull Down Refresh ---
+        if (Utils::getSetting('pullDownRefresh') == 'on') {
+            $this->intasela_pwa_print_script("{$plugin_url}/assets/js/pullDownRefresh.js", $version);
+        }
+
+        // --- Shake Refresh ---
+        if (Utils::getSetting('shakeRefresh') == 'on') {
+            $this->intasela_pwa_print_script("{$plugin_url}/assets/js/shakeRefresh.js", $version);
+        }
+
         // --- Banner Overlay (if enabled) ---
         if (Utils::getSetting('installationPromptsOverlayBanner') == 'on') {
             $this->intasela_pwa_print_localized_vars('intasela_pwa_install_overlay_banner_js_vars', [

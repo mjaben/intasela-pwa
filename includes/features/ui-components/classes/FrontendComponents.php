@@ -43,6 +43,28 @@ class FrontendComponents {
                 'themeColor' => Utils::getSetting( 'themeColor' ),
             ] );
         }
+        // Pull Down Refresh
+        if ( Utils::getSetting( 'pullDownRefresh' ) == 'on' ) {
+            wp_enqueue_script(
+                'intasela-pwa-pull-down-refresh',
+                plugins_url( 'assets/js/pullDownRefresh.js', INTASELA_PWA_FILE ),
+                $dependencies,
+                INTASELA_PWA_VERSION,
+                true
+            );
+            $dependencies[] = 'intasela-pwa-pull-down-refresh';
+        }
+        // Shake Refresh
+        if ( Utils::getSetting( 'shakeRefresh' ) == 'on' ) {
+            wp_enqueue_script(
+                'intasela-pwa-shake-refresh',
+                plugins_url( 'assets/js/shakeRefresh.js', INTASELA_PWA_FILE ),
+                $dependencies,
+                INTASELA_PWA_VERSION,
+                true
+            );
+            $dependencies[] = 'intasela-pwa-shake-refresh';
+        }
         // Inactive Blur
         if ( Utils::getSetting( 'inactiveBlur' ) == 'on' ) {
             wp_enqueue_script(
