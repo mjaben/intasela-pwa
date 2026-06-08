@@ -160,7 +160,11 @@ class PwaUsersAnalytics {
             $inserted = $wpdb->insert( $wpdb->intasela_pwa_pwa_users_table, $data, $formats );
             
             if ( $inserted === false ) {
-                return new \WP_Error('insert_failed', 'Failed to insert PWA user: ' . $wpdb->last_error, [
+                $error_msg = 'Failed to insert PWA user: ' . $wpdb->last_error;
+                $log_file = defined('INTASELA_PWA_DIR_PATH') ? INTASELA_PWA_DIR_PATH . 'pwa-error.log' : __DIR__ . '/../../../../pwa-error.log';
+                @file_put_contents($log_file, "[" . current_time('mysql') . "] Analytics Insert Error: " . $error_msg . "\nData: " . json_encode($data) . "\n\n", FILE_APPEND);
+                
+                return new \WP_Error('insert_failed', $error_msg, [
                     'status' => 500,
                 ]);
             }
@@ -212,7 +216,7 @@ class PwaUsersAnalytics {
                 $nowTimestamp = current_time( 'timestamp' );
                 $ninetyDaysAgo = gmdate( 'Y-m-d H:i:s', strtotime( '-90 days', $nowTimestamp ) );
                 // Cache active users count
-                $active_users_cache_key = 'intasela_pwa_active_users_' . md5( $ninetyDaysAgo );
+                $active_users_cache_key = 'intasela_pwa_active_users_90_days';
                 $activeUsers = wp_cache_get( $active_users_cache_key, 'intasela-pwa' );
                 if ( false === $activeUsers ) {
                     // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
@@ -227,7 +231,7 @@ class PwaUsersAnalytics {
                 }
                 // Cache installations data
                 $thirtyDaysAgo = gmdate( 'Y-m-d H:i:s', strtotime( '-30 days', $nowTimestamp ) );
-                $installations_cache_key = 'intasela_pwa_installations' . md5( $thirtyDaysAgo );
+                $installations_cache_key = 'intasela_pwa_installations_30_days';
                 $installations = wp_cache_get( $installations_cache_key, 'intasela-pwa' );
                 if ( false === $installations ) {
                     // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
