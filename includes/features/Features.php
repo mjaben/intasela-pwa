@@ -9,6 +9,7 @@ require_once __DIR__ . '/offline-usage/OfflineUsage.php';
 require_once __DIR__ . '/ui-components/UiComponents.php';
 require_once __DIR__ . '/app-capabilities/AppCapabilities.php';
 require_once __DIR__ . '/push-notifications/PushNotifications.php';
+require_once __DIR__ . '/splash-screen/SplashScreen.php';
 
 if (!defined('ABSPATH')) {
   exit();
@@ -25,5 +26,6 @@ class Features
     new Features\UiComponents();
     new Features\AppCapabilities();
     new Features\PushNotifications();
+    new Features\SplashScreen();
   }
 }

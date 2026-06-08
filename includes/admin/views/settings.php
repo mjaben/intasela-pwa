@@ -59,6 +59,15 @@ if (!defined('ABSPATH')) {
       </svg>
       <span class="hidden md:block"><?php esc_html_e('Push Notifications', 'intasela-pwa'); ?></span>
     </button>
+    <button type="button" class="data-[active]:bg-white data-[active]:shadow py-2 px-3 inline-flex whitespace-nowrap justify-center items-center gap-x-1.5 text-sm text-gray-800 rounded-lg disabled:opacity-50 disabled:pointer-events-none focus:outline-hidden" data-dp-tab-toggle="splash-screen">
+      <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M4 22h14a2 2 0 0 0 2-2V7.5L14.5 2H6a2 2 0 0 0-2 2v4"></path>
+        <polyline points="14 2 14 8 20 8"></polyline>
+        <path d="M2 15h10"></path>
+        <path d="m9 18 3-3-3-3"></path>
+      </svg>
+      <span class="hidden md:block"><?php esc_html_e('Splash Screen', 'intasela-pwa'); ?></span>
+    </button>
   </nav>
   <section class="space-y-5 w-full hidden data-[active=true]:block animate-[pageFade_.15s]" data-dp-tab-content="web-app-manifest">
     <?php include_once path_join(INTASELA_PWA_DIR_PATH, 'includes/admin/views/settings-web-app-manifest.php'); ?>
@@ -77,5 +86,8 @@ if (!defined('ABSPATH')) {
   </section>
   <section class="space-y-5 w-full hidden data-[active=true]:block animate-[pageFade_.15s]" data-dp-tab-content="push-notifications">
     <?php include_once path_join(INTASELA_PWA_DIR_PATH, 'includes/admin/views/settings-push-notifications.php'); ?>
+  </section>
+  <section class="space-y-5 w-full hidden data-[active=true]:block animate-[pageFade_.15s]" data-dp-tab-content="splash-screen">
+    <?php include_once path_join(INTASELA_PWA_DIR_PATH, 'includes/admin/views/settings-splash-screen.php'); ?>
   </section>
 </div>
