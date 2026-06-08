@@ -31,7 +31,7 @@ class PwaUsersAnalytics {
 
     public function registerRoutes() {
         register_rest_route( 'intasela-pwa/v1', '/pwa-users/upsert', [
-            'methods'             => 'PUT',
+            'methods'             => 'POST',
             'callback'            => [$this, 'upsertPwaUser'],
             'permission_callback' => '__return_true',
         ] );
@@ -215,43 +215,18 @@ class PwaUsersAnalytics {
             if ( $tableExists ) {
                 $nowTimestamp = current_time( 'timestamp' );
                 $ninetyDaysAgo = gmdate( 'Y-m-d H:i:s', strtotime( '-90 days', $nowTimestamp ) );
-                // Cache active users count
-                $active_users_cache_key = 'intasela_pwa_active_users_90_days';
-                $activeUsers = wp_cache_get( $active_users_cache_key, 'intasela-pwa' );
-                if ( false === $activeUsers ) {
-                    // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
-                    $activeUsers = (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$wpdb->intasela_pwa_pwa_users_table} WHERE last_open_date >= %s", $ninetyDaysAgo ) );
-                    wp_cache_set(
-                        $active_users_cache_key,
-                        $activeUsers,
-                        'intasela-pwa',
-                        300
-                    );
-                    // Cache for 5 minutes
-                }
-                // Cache installations data
+                // Get active users count
+                // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
+                $activeUsers = (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$wpdb->intasela_pwa_pwa_users_table} WHERE last_open_date >= %s", $ninetyDaysAgo ) );
+                
+                // Get installations data
                 $thirtyDaysAgo = gmdate( 'Y-m-d H:i:s', strtotime( '-30 days', $nowTimestamp ) );
-                $installations_cache_key = 'intasela_pwa_installations_30_days';
-                $installations = wp_cache_get( $installations_cache_key, 'intasela-pwa' );
-                if ( false === $installations ) {
-                    // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
-                    $installations = ( $wpdb->get_results( $wpdb->prepare( "SELECT DATE(first_open_date) as date, COUNT(*) as count FROM {$wpdb->intasela_pwa_pwa_users_table} WHERE first_open_date >= %s GROUP BY DATE(first_open_date) ORDER BY date ASC", $thirtyDaysAgo ) ) ?: [] );
-                    wp_cache_set(
-                        $installations_cache_key,
-                        $installations,
-                        'intasela-pwa',
-                        300
-                    );
-                    // Cache for 5 minutes
-                }
-                // Cache browser stats
-                $browsers_cache_key = 'intasela_pwa_browsers';
-                $browsers = wp_cache_get( $browsers_cache_key, 'intasela-pwa' );
-                if ( false === $browsers ) {
-                    // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
-                    $browsers = ( $wpdb->get_results( "SELECT browser_name, browser_icon, COUNT(*) as count FROM {$wpdb->intasela_pwa_pwa_users_table} GROUP BY browser_name, browser_icon ORDER BY count DESC LIMIT 3" ) ?: [] );
-                    wp_cache_set( $browsers_cache_key, $browsers, 'intasela-pwa', 300 );
-                }
+                // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
+                $installations = ( $wpdb->get_results( $wpdb->prepare( "SELECT DATE(first_open_date) as date, COUNT(*) as count FROM {$wpdb->intasela_pwa_pwa_users_table} WHERE first_open_date >= %s GROUP BY DATE(first_open_date) ORDER BY date ASC", $thirtyDaysAgo ) ) ?: [] );
+                
+                // Get browser stats
+                // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
+                $browsers = ( $wpdb->get_results( "SELECT browser_name, browser_icon, COUNT(*) as count FROM {$wpdb->intasela_pwa_pwa_users_table} GROUP BY browser_name, browser_icon ORDER BY count DESC LIMIT 3" ) ?: [] );
                 
                 $response['data'] = [
                     'activeUsers'   => $activeUsers,

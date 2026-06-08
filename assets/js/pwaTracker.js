@@ -147,7 +147,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         }
 
         const response = await fetch(`${targetRestUrl}intasela-pwa/v1/pwa-users/upsert`, {
-          method: 'PUT',
+          method: 'POST',
           credentials: 'include',
           headers: {
             'Content-Type': 'application/json',
