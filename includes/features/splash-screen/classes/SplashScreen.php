@@ -17,6 +17,10 @@ class SplashScreen {
 
         add_action( 'wp_head', [$this, 'renderStyles'], 100 );
         add_action( 'wp_footer', [$this, 'renderOverlay'], 100 );
+
+        // FluentCommunity Headless Portal Compatibility
+        add_action( 'fluent_community/portal_head', [$this, 'renderStyles'], 100 );
+        add_action( 'fluent_community/portal_footer', [$this, 'renderOverlay'], 100 );
     }
 
     public function renderStyles() {
