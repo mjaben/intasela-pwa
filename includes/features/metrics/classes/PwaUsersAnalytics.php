@@ -230,7 +230,14 @@ class PwaUsersAnalytics {
                 $installations = ( $wpdb->get_results( $wpdb->prepare( "SELECT DATE(first_open_date) as date, COUNT(*) as count FROM {$wpdb->intasela_pwa_pwa_users_table} WHERE first_open_date >= %s GROUP BY DATE(first_open_date) ORDER BY date ASC", $thirtyDaysAgo ) ) ?: [] );
                 
                 // Get browser stats
+                $totalUsers = (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->intasela_pwa_pwa_users_table}" );
                 $browsers = ( $wpdb->get_results( "SELECT browser_name, browser_icon, COUNT(*) as count FROM {$wpdb->intasela_pwa_pwa_users_table} GROUP BY browser_name, browser_icon ORDER BY count DESC LIMIT 3" ) ?: [] );
+                if ( $totalUsers > 0 ) {
+                    foreach ( $browsers as $browser ) {
+                        $browser->percentage = round( ($browser->count / $totalUsers) * 100 );
+                        $browser->browser_icon = \INTASELA_PWA_DIR_URL . 'assets/media/icons/' . $browser->browser_icon;
+                    }
+                }
                 // phpcs:enable WordPress.DB.DirectDatabaseQuery.DirectQuery
 
                 $response['data'] = [
