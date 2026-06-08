@@ -61,7 +61,7 @@ class FluentCommunity {
      */
     public function intasela_pwa_add_ios_meta_tags() {
         echo '<meta name="apple-mobile-web-app-capable" content="yes">' . "\n";
-        echo '<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">' . "\n";
+        echo '<meta name="apple-mobile-web-app-status-bar-style" content="default">' . "\n";
         echo '<meta name="apple-mobile-web-app-title" content="' . esc_attr(get_bloginfo('name')) . '">' . "\n";
     }
 
@@ -111,7 +111,7 @@ class FluentCommunity {
 
         // --- Apple meta tags ---
         echo '<meta name="apple-mobile-web-app-capable" content="yes">' . "\n";
-        echo '<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">' . "\n";
+        echo '<meta name="apple-mobile-web-app-status-bar-style" content="default">' . "\n";
         echo '<meta name="apple-mobile-web-app-title" content="' . esc_attr($app_name) . '">' . "\n";
         echo '<meta name="apple-touch-fullscreen" content="yes">' . "\n";
         echo '<link rel="apple-touch-icon" sizes="180x180" href="' . esc_url($icon_url) . '">' . "\n";
