@@ -56,6 +56,17 @@ class FrontendCapabilities {
                 'routeUrl' => esc_url_raw( Utils::getSetting( 'urlProtocolHandlerUrl' ) ),
             ] );
         }
+        // Vibrations
+        if ( Utils::getSetting( 'vibrations' ) == 'on' ) {
+            wp_enqueue_script(
+                'intasela-pwa-vibrations',
+                plugins_url( 'assets/js/vibrations.js', INTASELA_PWA_FILE ),
+                $dependencies,
+                INTASELA_PWA_VERSION,
+                true
+            );
+            $dependencies[] = 'intasela-pwa-vibrations';
+        }
     }
 
 }

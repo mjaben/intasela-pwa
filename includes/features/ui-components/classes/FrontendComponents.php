@@ -10,6 +10,7 @@ if ( !defined( 'ABSPATH' ) ) {
 class FrontendComponents {
     public function __construct() {
         add_action( 'wp_enqueue_scripts', [$this, 'loadFrontendComponents'] );
+        add_action( 'wp_footer', ['\Intasela\PWA\Features\UiComponents\NavigationTabBar', 'render'], 100 );
     }
 
     public function loadFrontendComponents() {
@@ -94,6 +95,17 @@ class FrontendComponents {
                 'hasActivePro'    => true,
             ] );
         }
+        // Toast Messages
+        if ( Utils::getSetting( 'toastMessages' ) == 'on' ) {
+            wp_enqueue_script(
+                'intasela-pwa-toast-messages',
+                plugins_url( 'assets/js/toastMessages.js', INTASELA_PWA_FILE ),
+                $dependencies,
+                INTASELA_PWA_VERSION,
+                true
+            );
+            $dependencies[] = 'intasela-pwa-toast-messages';
+        }
         // Share Button
         if ( Utils::getSetting( 'shareButton' ) == 'on' ) {
             wp_enqueue_script(
@@ -111,5 +123,6 @@ class FrontendComponents {
             ] );
         }
     }
+
 
 }

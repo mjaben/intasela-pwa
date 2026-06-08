@@ -118,28 +118,73 @@ esc_html_e( 'Add items to the navigation tab bar by selecting the icon, label an
             </label>
             <?php 
 ?>
-            <div class="space-y-3">
+            <div data-dp-copy-markup-wrapper="navigationItems">
+            <?php 
+            $navigationItems = Utils::getSetting( 'navigationItems' ) ?: [];
+            foreach ( $navigationItems as $index => $item ) {
+                echo '<div class="space-y-3" data-dp-copy-markup-target="navigationItem' . esc_attr( $index ) . '">
+                  <div class="flex gap-2">
+                    <div class="flex-none w-[110px]">
+                      <select name="navigationItems[' . esc_attr( $index ) . '][icon]" data-dp-select=\'{"placeholder": "' . esc_html__( 'Icon', 'intasela-pwa' ) . '"}\'>
+                        <option value="home" ' . selected( $item['icon'], 'home', false ) . '>' . esc_html__( 'Home', 'intasela-pwa' ) . '</option>
+                        <option value="dashboard" ' . selected( $item['icon'], 'dashboard', false ) . '>' . esc_html__( 'Dashboard', 'intasela-pwa' ) . '</option>
+                        <option value="profile" ' . selected( $item['icon'], 'profile', false ) . '>' . esc_html__( 'Profile', 'intasela-pwa' ) . '</option>
+                        <option value="cart" ' . selected( $item['icon'], 'cart', false ) . '>' . esc_html__( 'Cart', 'intasela-pwa' ) . '</option>
+                        <option value="search" ' . selected( $item['icon'], 'search', false ) . '>' . esc_html__( 'Search', 'intasela-pwa' ) . '</option>
+                        <option value="message" ' . selected( $item['icon'], 'message', false ) . '>' . esc_html__( 'Message', 'intasela-pwa' ) . '</option>
+                        <option value="bell" ' . selected( $item['icon'], 'bell', false ) . '>' . esc_html__( 'Alerts', 'intasela-pwa' ) . '</option>
+                        <option value="settings" ' . selected( $item['icon'], 'settings', false ) . '>' . esc_html__( 'Settings', 'intasela-pwa' ) . '</option>
+                        <option value="heart" ' . selected( $item['icon'], 'heart', false ) . '>' . esc_html__( 'Heart', 'intasela-pwa' ) . '</option>
+                        <option value="star" ' . selected( $item['icon'], 'star', false ) . '>' . esc_html__( 'Star', 'intasela-pwa' ) . '</option>
+                      </select>
+                    </div>
+                    <div class="flex-none w-1/4">
+                      <input type="text" name="navigationItems[' . esc_attr( $index ) . '][label]" value="' . esc_attr( $item['label'] ) . '" class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm placeholder:text-gray-400 focus:border-indigo-500 focus:ring-indigo-500" placeholder="' . esc_html__( 'Enter Label', 'intasela-pwa' ) . '">
+                    </div>
+                    <div class="flex-grow">
+                      <input type="url" name="navigationItems[' . esc_attr( $index ) . '][url]" value="' . esc_url( $item['url'] ) . '" class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm placeholder:text-gray-400 focus:border-indigo-500 focus:ring-indigo-500 [&::-webkit-calendar-picker-indicator]:!hidden" placeholder="' . esc_html__( 'Enter URL', 'intasela-pwa' ) . '">
+                    </div>
+                    <div class="flex-none flex items-center ml-1.5">
+                      <button type="button" class="py-1 px-1 inline-flex justify-center items-center gap-x-1.5 font-medium text-sm rounded-full bg-red-100 border border-transparent text-red-600 hover:bg-red-200 focus:outline-none focus:bg-red-200" data-dp-copy-markup-delete="navigationItem' . esc_attr( $index ) . '">
+                        <svg class="block flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"></path><path d="m6 6 12 12"></path></svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>';
+            }
+            ?>
+            <div class="space-y-3" data-dp-copy-markup-target="navigationItem">
               <div class="flex gap-2">
                 <div class="flex-none w-[70px]">
-                  <select data-dp-select='{
+                  <select name="navigationItems[icon]" data-dp-select='{
                       "placeholder": "<?php 
 esc_html_e( 'Icon', 'intasela-pwa' );
 ?>"
                     }'>
+                    <option value="home"><?php esc_html_e( 'Home', 'intasela-pwa' ); ?></option>
+                    <option value="dashboard"><?php esc_html_e( 'Dashboard', 'intasela-pwa' ); ?></option>
+                    <option value="profile"><?php esc_html_e( 'Profile', 'intasela-pwa' ); ?></option>
+                    <option value="cart"><?php esc_html_e( 'Cart', 'intasela-pwa' ); ?></option>
+                    <option value="search"><?php esc_html_e( 'Search', 'intasela-pwa' ); ?></option>
+                    <option value="message"><?php esc_html_e( 'Message', 'intasela-pwa' ); ?></option>
+                    <option value="bell"><?php esc_html_e( 'Alerts', 'intasela-pwa' ); ?></option>
+                    <option value="settings"><?php esc_html_e( 'Settings', 'intasela-pwa' ); ?></option>
+                    <option value="heart"><?php esc_html_e( 'Heart', 'intasela-pwa' ); ?></option>
+                    <option value="star"><?php esc_html_e( 'Star', 'intasela-pwa' ); ?></option>
                   </select>
                 </div>
                 <div class="flex-none w-1/3">
-                  <input type="text" class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm placeholder:text-gray-400 focus:border-indigo-500 focus:ring-indigo-500 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none" placeholder="<?php 
+                  <input type="text" name="navigationItems[label]" class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm placeholder:text-gray-400 focus:border-indigo-500 focus:ring-indigo-500 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none" placeholder="<?php 
 esc_html_e( 'Enter Label', 'intasela-pwa' );
 ?>">
                 </div>
                 <div class="flex-grow">
-                  <input type="url" class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm placeholder:text-gray-400 focus:border-indigo-500 focus:ring-indigo-500 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none [&::-webkit-calendar-picker-indicator]:!hidden" placeholder="<?php 
+                  <input type="url" name="navigationItems[url]" class="py-2 px-3 block w-full border-gray-200 rounded-lg text-sm placeholder:text-gray-400 focus:border-indigo-500 focus:ring-indigo-500 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none [&::-webkit-calendar-picker-indicator]:!hidden" placeholder="<?php 
 esc_html_e( 'Enter URL', 'intasela-pwa' );
 ?>">
                 </div>
                 <div class="flex-none flex items-center ml-1.5">
-                  <button type="button" class="py-1 px-1 inline-flex justify-center items-center gap-x-1.5 font-medium text-sm rounded-full bg-gray-100 border border-transparent text-gray-600 hover:bg-gray-200 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none focus:outline-none focus:bg-gray-200" data-disabled="true">
+                  <button type="button" class="py-1 px-1 inline-flex justify-center items-center gap-x-1.5 font-medium text-sm rounded-full bg-gray-100 border border-transparent text-gray-600 hover:bg-gray-200 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none focus:outline-none focus:bg-gray-200" data-dp-copy-markup-delete="navigationItem" data-disabled="true">
                     <svg class="block flex-shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                       <path d="M18 6 6 18"></path>
                       <path d="m6 6 12 12"></path>
@@ -148,8 +193,9 @@ esc_html_e( 'Enter URL', 'intasela-pwa' );
                 </div>
               </div>
             </div>
+            </div>
             <div class="mt-3 text-end">
-              <button type="button" class="py-1.5 px-2 inline-flex items-center gap-x-1 text-xs font-medium rounded-full border border-dashed border-gray-200 bg-white text-gray-800 hover:bg-gray-50 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none focus:outline-none focus:bg-gray-50">
+              <button type="button" class="py-1.5 px-2 inline-flex items-center gap-x-1 text-xs font-medium rounded-full border border-dashed border-gray-200 bg-white text-gray-800 hover:bg-gray-50 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none focus:outline-none focus:bg-gray-50" data-dp-copy-markup='{"wrapper": "navigationItems", "target": "navigationItem", "limit": 5}'>
                 <svg class="flex-shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                   <path d="M5 12h14" />
                   <path d="M12 5v14" />

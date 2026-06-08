@@ -7,6 +7,7 @@ if (!defined('ABSPATH')) {
 }
 
 require_once __DIR__ . '/classes/FrontendComponents.php';
+require_once __DIR__ . '/classes/NavigationTabBar.php';
 
 class UiComponents
 {

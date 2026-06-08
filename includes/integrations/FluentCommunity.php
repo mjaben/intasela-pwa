@@ -210,6 +210,22 @@ class FluentCommunity {
         ]);
         $this->intasela_pwa_print_script("{$plugin_url}/assets/js/installButton.js", $version);
 
+        // --- Swipe Navigation ---
+        if (Utils::getSetting('swipeNavigation') == 'on') {
+            $this->intasela_pwa_print_localized_vars('intasela_pwa_swipe_navigation_js_vars', [
+                'themeColor' => Utils::getSetting('themeColor'),
+            ]);
+            $this->intasela_pwa_print_script("{$plugin_url}/assets/js/swipeNavigation.js", $version);
+        }
+
+        // --- Scroll Progress Bar ---
+        if (Utils::getSetting('scrollProgressBar') == 'on') {
+            $this->intasela_pwa_print_localized_vars('intasela_pwa_scroll_progress_bar_js_vars', [
+                'themeColor' => Utils::getSetting('themeColor'),
+            ]);
+            $this->intasela_pwa_print_script("{$plugin_url}/assets/js/scrollProgressBar.js", $version);
+        }
+
         // --- Pull Down Refresh ---
         if (Utils::getSetting('pullDownRefresh') == 'on') {
             $this->intasela_pwa_print_script("{$plugin_url}/assets/js/pullDownRefresh.js", $version);
@@ -257,6 +273,9 @@ class FluentCommunity {
                 $this->intasela_pwa_print_script("{$plugin_url}/assets/js/installOverlay{$overlay}.js", $version);
             }
         }
+
+        // Render Navigation Tab Bar HTML/CSS directly (it's not just a script)
+        \Intasela\PWA\Features\UiComponents\NavigationTabBar::render();
     }
 
     // ------------------------------------------------------------------
