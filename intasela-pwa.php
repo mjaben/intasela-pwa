@@ -4,7 +4,7 @@
 Plugin Name: Intasela_PWA
 Description: Empower your website with Progressive Web App (PWA) features and give it a true app-like experience with install prompts, offline access, push notifications, advanced UI components, powerful web capabilities, detailed analytics, & more.
 Plugin URI: Intasela.com
-Version: 1.0.5
+Version: 1.0.6
 Author: Intasela
 Author URI:
 License: GPLv3
@@ -61,7 +61,7 @@ if (function_exists('\\Intasela\\PWA\\intasela_pwa_pro')) {
     // Signal that SDK was initiated.
     do_action('intasela_pwa_pro_loaded');
     // Define Constants
-    define('INTASELA_PWA_VERSION', '1.3.0');
+    define('INTASELA_PWA_VERSION', time());
     define('INTASELA_PWA_FILE', __FILE__);
     define('INTASELA_PWA_BASENAME', plugin_basename(__FILE__));
     define('INTASELA_PWA_DIR_URL', plugin_dir_url(__FILE__));
