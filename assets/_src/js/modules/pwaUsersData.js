@@ -9,9 +9,11 @@ class PwaUsersDataManager {
     this.chart = null;
 
     // UI elements
-    this.activeUsersElement = $daftplugAdmin.querySelector('#activePwaUsers');
+    this.dauElement = $daftplugAdmin.querySelector('#activePwaUsersDau');
+    this.wauElement = $daftplugAdmin.querySelector('#activePwaUsersWau');
+    this.mauElement = $daftplugAdmin.querySelector('#activePwaUsersMau');
+    this.returningElement = $daftplugAdmin.querySelector('#activePwaUsersReturning');
     this.chartContainer = $daftplugAdmin.querySelector('#pwaInstallsChart');
-    
   }
 
   init() {
@@ -70,18 +72,21 @@ class PwaUsersDataManager {
   updateUI() {
     this.updateActiveUsersCount(this.usersData.activeUsers);
     const installations = this.prepareInstallationsData();
-    this.chart = this.createChart(
-      installations.map((i) => i.shortDate),
-      installations.map((i) => i.count),
-      installations
-    );
+    if (this.chartContainer) {
+      this.chart = this.createChart(
+        installations.map((i) => i.shortDate),
+        installations.map((i) => i.count),
+        installations
+      );
+    }
     
   }
 
   updateActiveUsersCount(active) {
-    if (this.activeUsersElement) {
-      this.activeUsersElement.textContent = active.toLocaleString();
-    }
+    if (this.dauElement) this.dauElement.textContent = active.dau.toLocaleString();
+    if (this.wauElement) this.wauElement.textContent = active.wau.toLocaleString();
+    if (this.mauElement) this.mauElement.textContent = active.mau.toLocaleString();
+    if (this.returningElement) this.returningElement.textContent = active.returning.toLocaleString();
   }
 
   

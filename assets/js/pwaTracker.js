@@ -176,16 +176,19 @@ document.addEventListener('DOMContentLoaded', async function () {
   }
 
   if (!isPwa()) {
+    console.log('PWA Tracker: Aborting because isPwa() returned false');
     return;
   }
 
   try {
+    console.log('PWA Tracker: isPwa() is true. Proceeding to send analytics event...');
     // Set session storage item
     sessionStorage.setItem('isPwa', 'true');
     // Add isPwa class to body for potential usage
     document.body.classList.add('isPwa');
-    await sendPwaUsageEventToServer();
+    const result = await sendPwaUsageEventToServer();
+    console.log('PWA Tracker: Successfully sent event to server:', result);
   } catch (error) {
-    console.error('Failed to track PWA session:', error);
+    console.error('PWA Tracker: Failed to track PWA session:', error);
   }
 });

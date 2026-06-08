@@ -214,22 +214,32 @@ class PwaUsersAnalytics {
             // Only query if table exists
             if ( $tableExists ) {
                 $nowTimestamp = current_time( 'timestamp' );
-                $ninetyDaysAgo = gmdate( 'Y-m-d H:i:s', strtotime( '-90 days', $nowTimestamp ) );
-                // Get active users count
-                // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
-                $activeUsers = (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$wpdb->intasela_pwa_pwa_users_table} WHERE last_open_date >= %s", $ninetyDaysAgo ) );
+                
+                $dauTime = gmdate( 'Y-m-d H:i:s', strtotime( '-1 day', $nowTimestamp ) );
+                $wauTime = gmdate( 'Y-m-d H:i:s', strtotime( '-7 days', $nowTimestamp ) );
+                $mauTime = gmdate( 'Y-m-d H:i:s', strtotime( '-30 days', $nowTimestamp ) );
+
+                // phpcs:disable WordPress.DB.DirectDatabaseQuery.DirectQuery
+                $dau = (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$wpdb->intasela_pwa_pwa_users_table} WHERE last_open_date >= %s", $dauTime ) );
+                $wau = (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$wpdb->intasela_pwa_pwa_users_table} WHERE last_open_date >= %s", $wauTime ) );
+                $mau = (int) $wpdb->get_var( $wpdb->prepare( "SELECT COUNT(*) FROM {$wpdb->intasela_pwa_pwa_users_table} WHERE last_open_date >= %s", $mauTime ) );
+                $returning = (int) $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->intasela_pwa_pwa_users_table} WHERE last_open_date > first_open_date" );
                 
                 // Get installations data
                 $thirtyDaysAgo = gmdate( 'Y-m-d H:i:s', strtotime( '-30 days', $nowTimestamp ) );
-                // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
                 $installations = ( $wpdb->get_results( $wpdb->prepare( "SELECT DATE(first_open_date) as date, COUNT(*) as count FROM {$wpdb->intasela_pwa_pwa_users_table} WHERE first_open_date >= %s GROUP BY DATE(first_open_date) ORDER BY date ASC", $thirtyDaysAgo ) ) ?: [] );
                 
                 // Get browser stats
-                // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
                 $browsers = ( $wpdb->get_results( "SELECT browser_name, browser_icon, COUNT(*) as count FROM {$wpdb->intasela_pwa_pwa_users_table} GROUP BY browser_name, browser_icon ORDER BY count DESC LIMIT 3" ) ?: [] );
-                
+                // phpcs:enable WordPress.DB.DirectDatabaseQuery.DirectQuery
+
                 $response['data'] = [
-                    'activeUsers'   => $activeUsers,
+                    'activeUsers'   => [
+                        'dau'       => $dau,
+                        'wau'       => $wau,
+                        'mau'       => $mau,
+                        'returning' => $returning,
+                    ],
                     'installations' => $installations,
                     'browsers'      => $browsers,
                 ];
