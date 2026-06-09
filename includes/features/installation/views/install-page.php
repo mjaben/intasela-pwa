@@ -29,7 +29,7 @@ $intasela_pwaAppIcon = PwaAssets::getPwaIconUrl('rounded', 180);
 $intasela_pwaAppScreenshots = Utils::getSetting('appScreenshots');
 $intasela_pwaAppDomain = wp_parse_url(Utils::getHomeUrl('/', false), PHP_URL_HOST);
 $intasela_pwaInstallationPromptsText = Utils::getSetting('installationPromptsText');
-$intasela_pwaInstallUrl = Utils::getHomeUrl('/?performInstallation=true', false);
+$intasela_pwaInstallUrl = Utils::getHomeUrl('/#performInstallation', false);
 $intasela_pwaThemeColor = Utils::getSetting('themeColor');
 $intasela_pwaBackgroundColor = Utils::getSetting('backgroundColor');
 $intasela_pwaThemeTextColor = intasela_pwaGetContrastTextColor($intasela_pwaThemeColor);

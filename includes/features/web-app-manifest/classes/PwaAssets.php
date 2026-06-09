@@ -128,7 +128,7 @@ class PwaAssets
           throw new \Exception('Failed to read rounded icon for QR code generation');
         }
 
-        $installationQrCodeData = self::generateQrCode(add_query_arg('performInstallation', 'true', Utils::getHomeUrl()), '160x160', $roundedIconContent);
+        $installationQrCodeData = self::generateQrCode(Utils::getHomeUrl('/#performInstallation', false), '160x160', $roundedIconContent);
         Utils::putContent(INTASELA_PWA_UPLOAD_DIR . 'qr-codes/qr-pwa-installation.png', $installationQrCodeData);
       }
 

@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return urlObject.href;
   };
 
-  if (isPwa() || !hasUrlParam('performInstallation', 'true')) {
+  if (isPwa() || window.location.hash !== '#performInstallation') {
     return;
   }
 
@@ -41,5 +41,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   IntaselaPWAInstallPrompt.show();
 
-  removeParamFromUrl('performInstallation');
+  // Clear the hash from the URL without reloading the page
+  window.history.replaceState(null, '', window.location.pathname + window.location.search);
 });
