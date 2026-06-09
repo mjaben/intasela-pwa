@@ -68,13 +68,28 @@ class Manifest {
         $manifestShortName = trim( sanitize_text_field( substr( (string) Utils::getSetting( 'shortName' ), 0, 30 ) ) );
         $manifestDescription = trim( sanitize_text_field( Utils::getSetting( 'description' ) ) );
         $manifestStartUrlPath = trim( sanitize_text_field( (string) Utils::getSetting( 'startPagePath' ) ) );
+        
+        $startUrl = $manifestStartUrlPath !== '' ? $manifestStartUrlPath : '/';
+        if ( Utils::getSetting( 'utmTracking' ) === 'on' ) {
+            $utmParams = [];
+            if ( $source = Utils::getSetting( 'utmSource' ) ) $utmParams['utm_source'] = $source;
+            if ( $medium = Utils::getSetting( 'utmMedium' ) ) $utmParams['utm_medium'] = $medium;
+            if ( $campaign = Utils::getSetting( 'utmCampaign' ) ) $utmParams['utm_campaign'] = $campaign;
+            if ( $term = Utils::getSetting( 'utmTerm' ) ) $utmParams['utm_term'] = $term;
+            if ( $content = Utils::getSetting( 'utmContent' ) ) $utmParams['utm_content'] = $content;
+            
+            if ( !empty( $utmParams ) ) {
+                $startUrl = add_query_arg( $utmParams, $startUrl );
+            }
+        }
+
         $manifest = [
             'lang'             => ( get_bloginfo( 'language' ) ?: 'en-US' ),
             'id'               => hash( 'crc32', Utils::getDomainFromUrl( Utils::getHomeUrl() ) ),
             'dir'              => ( is_rtl() ? 'rtl' : 'ltr' ),
             'name'             => $manifestName,
             'scope'            => $scope,
-            'start_url'        => add_query_arg( 'utm_source', 'pwa', ( $manifestStartUrlPath !== '' ? $manifestStartUrlPath : '/' ) ),
+            'start_url'        => $startUrl,
             'short_name'       => $manifestShortName,
             'description'      => $manifestDescription,
             'display'          => ( true ? Utils::getSetting( 'displayMode' ) : 'standalone' ),

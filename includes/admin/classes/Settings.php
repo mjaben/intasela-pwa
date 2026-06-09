@@ -58,6 +58,12 @@ class Settings {
             'pushControlsLoggedInOnly'                => 'off',
             'pushTimeToLive'                          => 2419200,
             'pushBatchSize'                           => 1000,
+            'utmTracking'                             => 'on',
+            'utmSource'                               => 'pwa',
+            'utmMedium'                               => 'pwa',
+            'utmCampaign'                             => 'pwa',
+            'utmTerm'                                 => '',
+            'utmContent'                              => '',
         ];
         // Get existing settings
         $existingSettings = get_option( 'intasela_pwa_settings', [] );

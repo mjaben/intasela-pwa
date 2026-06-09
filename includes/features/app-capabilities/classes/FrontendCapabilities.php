@@ -67,6 +67,24 @@ class FrontendCapabilities {
             );
             $dependencies[] = 'intasela-pwa-vibrations';
         }
+        // UTM Tracking
+        if ( Utils::getSetting( 'utmTracking' ) == 'on' ) {
+            wp_enqueue_script(
+                'intasela-pwa-utm-tracking',
+                plugins_url( 'assets/js/utmTracking.js', INTASELA_PWA_FILE ),
+                $dependencies,
+                INTASELA_PWA_VERSION,
+                true
+            );
+            wp_localize_script( 'intasela-pwa-utm-tracking', 'intasela_pwa_utm_settings', [
+                'source'   => Utils::getSetting( 'utmSource' ),
+                'medium'   => Utils::getSetting( 'utmMedium' ),
+                'campaign' => Utils::getSetting( 'utmCampaign' ),
+                'term'     => Utils::getSetting( 'utmTerm' ),
+                'content'  => Utils::getSetting( 'utmContent' ),
+            ] );
+            $dependencies[] = 'intasela-pwa-utm-tracking';
+        }
     }
 
 }
