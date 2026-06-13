@@ -37,7 +37,62 @@ class FluentCommunity {
         if (class_exists('\\FluentCommunity\\App\\App')) {
             add_action('fluent_community/portal_head', [$this, 'intasela_pwa_inject_portal_head']);
             add_action('fluent_community/portal_footer', [$this, 'intasela_pwa_inject_portal_scripts']);
+            
+            // Enable native FC Push UI
+            add_filter('fluent_community/portal_vars', [$this, 'intasela_pwa_enable_fc_push_ui']);
+            
+            // Provide fluentNotify shim for the native UI to work with Intasela PWA
+            add_action('wp_footer', [$this, 'intasela_pwa_print_fluent_notify_shim'], 99);
+            add_action('fluent_community/portal_footer', [$this, 'intasela_pwa_print_fluent_notify_shim'], 5);
         }
+    }
+
+    /**
+     * Set has_push_notification to true to enable Fluent Community's native Push UI.
+     *
+     * @param array $vars Portal variables.
+     * @return array Modified portal variables.
+     */
+    public function intasela_pwa_enable_fc_push_ui($vars) {
+        if (!isset($vars['has_push_notification'])) {
+            $vars['has_push_notification'] = true;
+        }
+        return $vars;
+    }
+
+    private $shim_printed = false;
+
+    /**
+     * Output the window.fluentNotify shim so FC's native UI can interact
+     * with the Intasela PWA PushNotificationsSubscriptionManager.
+     *
+     * @return void
+     */
+    public function intasela_pwa_print_fluent_notify_shim() {
+        if ($this->shim_printed) {
+            return;
+        }
+        $this->shim_printed = true;
+        
+        echo "<script>\n";
+        echo "window.fluentNotify = window.fluentNotify || {\n";
+        echo "    getPermission: function() {\n";
+        echo "        return ('Notification' in window) ? Notification.permission : 'denied';\n";
+        echo "    },\n";
+        echo "    subscribe: async function() {\n";
+        echo "        if (window.PushNotificationsSubscription) {\n";
+        echo "            try {\n";
+        echo "                await window.PushNotificationsSubscription.addSubscription();\n";
+        echo "                return window.PushNotificationsSubscription.currentState === 'subscribed';\n";
+        echo "            } catch (error) {\n";
+        echo "                console.error('Subscription via FC native UI failed:', error);\n";
+        echo "                return false;\n";
+        echo "            }\n";
+        echo "        }\n";
+        echo "        return false;\n";
+        echo "    }\n";
+        echo "};\n";
+        echo "</script>\n";
     }
 
     /**
