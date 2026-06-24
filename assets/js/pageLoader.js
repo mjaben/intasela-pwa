@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function () {
       this.styles = new Set();
 
       // Get page loader type from settings
-      this.type = 'default';
+      this.type = pageLoaderJsVars.pageLoaderType || 'default';
 
       
 
@@ -135,6 +135,40 @@ document.addEventListener('DOMContentLoaded', function () {
 
     
 
+    renderSpinnerPageLoader() {
+      const backgroundColor = pageLoaderJsVars.backgroundColor ?? '#ffffff';
+      const contrastColor = getContrastTextColor(backgroundColor);
+      const isDark = contrastColor === '#ffffff';
+      const trackColor = isDark ? 'rgba(255, 255, 255, 0.15)' : 'rgba(0, 0, 0, 0.1)';
+      const spinColor = isDark ? '#ffffff' : '#000000';
+
+      this.injectStyles(`
+      .pageLoader.-spinner {
+        background-color: ${backgroundColor};
+      }
+
+      .modern-spinner {
+        width: 48px;
+        height: 48px;
+        border: 4px solid ${trackColor};
+        border-top-color: ${spinColor};
+        border-radius: 50%;
+        animation: pageLoaderSpin 0.8s linear infinite;
+      }
+
+      @keyframes pageLoaderSpin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+      }
+      `);
+
+      return `
+      <div class="pageLoader -spinner">
+        <div class="modern-spinner"></div>
+      </div>
+      `;
+    }
+
     renderDefaultPageLoader() {
       const backgroundColor = pageLoaderJsVars.backgroundColor ?? '#ffffff';
       const appIcon = pageLoaderJsVars.iconUrl ?? '';
@@ -202,9 +236,17 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     `);
 
-      let pageLoaderContent = this.renderDefaultPageLoader();
+      let pageLoaderContent = '';
 
-      
+      switch (this.type) {
+        case 'spinner':
+          pageLoaderContent = this.renderSpinnerPageLoader();
+          break;
+        case 'default':
+        default:
+          pageLoaderContent = this.renderDefaultPageLoader();
+          break;
+      }
 
       const combinedStyles = Array.from(this.styles).join('\n');
 
