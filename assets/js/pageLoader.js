@@ -84,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
           pageLoader.classList.remove('no-transition');
         });
 
-        
+        this.startPercentAnimation();
       }
     }
 
@@ -97,6 +97,8 @@ document.addEventListener('DOMContentLoaded', function () {
           document.documentElement.style.paddingRight = `${window.innerWidth - document.documentElement.offsetWidth}px`;
           document.documentElement.style.overflow = 'hidden';
           pageLoader.classList.add('visible');
+          
+          this.startPercentAnimation();
         });
       }
     }
@@ -104,9 +106,9 @@ document.addEventListener('DOMContentLoaded', function () {
     hidePageLoader() {
       const pageLoader = this.shadowRoot.querySelector('.pageLoader');
       if (pageLoader) {
-        
-
-        this.fadeOutPageLoader(pageLoader);
+        this.completePercentAnimation(() => {
+          this.fadeOutPageLoader(pageLoader);
+        });
       }
     }
 
@@ -134,6 +136,47 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     
+
+    startPercentAnimation() {
+      if (this.type !== 'percent') return;
+      const textEl = this.shadowRoot.getElementById('pwa-percent-value');
+      const barEl = this.shadowRoot.getElementById('pwa-percent-bar');
+      if (!textEl || !barEl) return;
+      
+      let percent = 0;
+      textEl.innerText = '0';
+      barEl.style.width = '0%';
+      
+      clearInterval(this.percentInterval);
+      this.percentInterval = setInterval(() => {
+        if (percent < 90) {
+          const increment = Math.max(1, Math.floor((90 - percent) / 10));
+          percent += increment;
+          textEl.innerText = percent;
+          barEl.style.width = percent + '%';
+        }
+      }, 100);
+    }
+
+    completePercentAnimation(callback) {
+      if (this.type !== 'percent') {
+        if (callback) callback();
+        return;
+      }
+      
+      clearInterval(this.percentInterval);
+      const textEl = this.shadowRoot.getElementById('pwa-percent-value');
+      const barEl = this.shadowRoot.getElementById('pwa-percent-bar');
+      if (textEl && barEl) {
+        textEl.innerText = '100';
+        barEl.style.width = '100%';
+        setTimeout(() => {
+          if (callback) callback();
+        }, 300);
+      } else {
+        if (callback) callback();
+      }
+    }
 
     renderSpinnerPageLoader() {
       const backgroundColor = pageLoaderJsVars.backgroundColor ?? '#ffffff';
@@ -166,6 +209,185 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="pageLoader -spinner">
         <div class="modern-spinner"></div>
       </div>
+      `;
+    }
+
+    renderSkeletonPageLoader() {
+      const backgroundColor = pageLoaderJsVars.backgroundColor ?? '#ffffff';
+      const contrastColor = getContrastTextColor(backgroundColor);
+      const isDark = contrastColor === '#ffffff';
+      const skeletonBase = isDark ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0, 0, 0, 0.05)';
+      const skeletonHighlight = isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)';
+
+      this.injectStyles(`
+      .pageLoader.-skeleton {
+        background-color: ${backgroundColor};
+        display: flex;
+        flex-direction: column;
+        padding: 20px;
+        align-items: center;
+        box-sizing: border-box;
+      }
+      .skeleton-container {
+        width: 100%;
+        max-width: 600px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 50px;
+      }
+      .skeleton-header {
+        height: 60px;
+        border-radius: 12px;
+        background: ${skeletonBase};
+        position: relative;
+        overflow: hidden;
+      }
+      .skeleton-hero {
+        height: 200px;
+        border-radius: 16px;
+        background: ${skeletonBase};
+        position: relative;
+        overflow: hidden;
+      }
+      .skeleton-row {
+        height: 20px;
+        border-radius: 6px;
+        background: ${skeletonBase};
+        position: relative;
+        overflow: hidden;
+      }
+      .skeleton-row.short { width: 60%; }
+      .skeleton-row.medium { width: 80%; }
+      
+      .skeleton-header::after, .skeleton-hero::after, .skeleton-row::after {
+        content: '';
+        position: absolute;
+        top: 0; right: 0; bottom: 0; left: 0;
+        transform: translateX(-100%);
+        background-image: linear-gradient(
+          90deg, 
+          transparent 0, 
+          ${skeletonHighlight} 20%, 
+          ${skeletonHighlight} 60%, 
+          transparent
+        );
+        animation: pageLoaderShimmer 1.5s infinite;
+      }
+
+      @keyframes pageLoaderShimmer {
+        100% {
+          transform: translateX(100%);
+        }
+      }
+      `);
+
+      return `
+      <div class="pageLoader -skeleton">
+        <div class="skeleton-container">
+          <div class="skeleton-header"></div>
+          <div class="skeleton-hero"></div>
+          <div class="skeleton-row"></div>
+          <div class="skeleton-row medium"></div>
+          <div class="skeleton-row short"></div>
+          <div class="skeleton-row"></div>
+          <div class="skeleton-row medium"></div>
+        </div>
+      </div>
+      `;
+    }
+
+    renderRedirectPageLoader() {
+      const backgroundColor = '#fde047';
+      
+      this.injectStyles(`
+      .pageLoader.-redirect {
+        background-color: ${backgroundColor};
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+      .flying-man {
+        font-size: 80px;
+        animation: pageLoaderFlyAcross 2.5s ease-in-out infinite;
+      }
+
+      @keyframes pageLoaderFlyAcross {
+        0% { transform: translate(-150vw, 20px) rotate(15deg) scale(0.8); }
+        50% { transform: translate(0, -20px) rotate(0deg) scale(1.2); }
+        100% { transform: translate(150vw, 20px) rotate(-15deg) scale(0.8); }
+      }
+      `);
+
+      return `
+      <div class="pageLoader -redirect">
+        <div class="flying-man">🦸‍♂️</div>
+      </div>
+      `;
+    }
+
+    renderPercentPageLoader() {
+      const backgroundColor = pageLoaderJsVars.backgroundColor ?? '#ffffff';
+      const textColor = getContrastTextColor(backgroundColor);
+      const isDark = textColor === '#ffffff';
+      const progressBg = isDark ? 'rgba(255, 255, 255, 0.2)' : 'rgba(0, 0, 0, 0.1)';
+      const progressFill = isDark ? '#ffffff' : '#000000'; 
+
+      this.injectStyles(`
+      .pageLoader.-percent {
+        background-color: ${backgroundColor};
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        color: ${textColor};
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+      .percent-text {
+        font-size: 32px;
+        font-weight: 700;
+        font-variant-numeric: tabular-nums;
+      }
+      .percent-bar-container {
+        width: 80%;
+        max-width: 300px;
+        height: 6px;
+        background: ${progressBg};
+        border-radius: 3px;
+        overflow: hidden;
+      }
+      .percent-bar {
+        height: 100%;
+        width: 0%;
+        background: ${progressFill};
+        border-radius: 3px;
+        transition: width 0.3s ease-out;
+      }
+      `);
+
+      return `
+      <div class="pageLoader -percent">
+        <div class="percent-text"><span id="pwa-percent-value">0</span>%</div>
+        <div class="percent-bar-container">
+          <div class="percent-bar" id="pwa-percent-bar"></div>
+        </div>
+      </div>
+      `;
+    }
+
+    renderFadePageLoader() {
+      const backgroundColor = pageLoaderJsVars.backgroundColor ?? '#ffffff';
+      
+      this.injectStyles(`
+      .pageLoader.-fade {
+        background-color: ${backgroundColor};
+      }
+      `);
+
+      return `
+      <div class="pageLoader -fade"></div>
       `;
     }
 
@@ -239,6 +461,18 @@ document.addEventListener('DOMContentLoaded', function () {
       let pageLoaderContent = '';
 
       switch (this.type) {
+        case 'skeleton':
+          pageLoaderContent = this.renderSkeletonPageLoader();
+          break;
+        case 'redirect':
+          pageLoaderContent = this.renderRedirectPageLoader();
+          break;
+        case 'percent':
+          pageLoaderContent = this.renderPercentPageLoader();
+          break;
+        case 'fade':
+          pageLoaderContent = this.renderFadePageLoader();
+          break;
         case 'spinner':
           pageLoaderContent = this.renderSpinnerPageLoader();
           break;
