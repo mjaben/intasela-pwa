@@ -40,6 +40,7 @@ class Settings {
             'scrollProgressBar'                       => 'off',
             'pageLoader'                              => 'on',
             'pageLoaderType'                          => 'default',
+            'enforceNativeAppUx'                      => 'off',
             'inactiveBlur'                            => 'off',
             'shareButton'                             => 'off',
             'shareButtonPosition'                     => 'bottom-right',

@@ -129,16 +129,17 @@
     showPageLoaderBeforeUnload() {
       const pageLoader = this.shadowRoot.querySelector('.pageLoader');
       if (pageLoader) {
+        document.documentElement.style.paddingRight = `${window.innerWidth - document.documentElement.offsetWidth}px`;
+        document.documentElement.style.overflow = 'hidden';
         
-
-        requestAnimationFrame(() => {
-          document.documentElement.style.paddingRight = `${window.innerWidth - document.documentElement.offsetWidth}px`;
-          document.documentElement.style.overflow = 'hidden';
-          pageLoader.classList.add('no-transition');
-          pageLoader.classList.add('visible');
-          
-          this.startPercentAnimation();
-        });
+        // Force synchronous layout to avoid browser suppressing frames during navigation
+        pageLoader.style.display = 'flex';
+        pageLoader.offsetHeight;
+        
+        pageLoader.classList.add('no-transition');
+        pageLoader.classList.add('visible');
+        
+        this.startPercentAnimation();
       }
     }
 

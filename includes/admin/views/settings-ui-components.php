@@ -462,6 +462,32 @@ checked( Utils::getSetting( 'inactiveBlur' ), 'on' );
           </div>
         </label>
       </div>
+      <div id="settingEnforceNativeAppUx" class="relative bg-white border border-gray-200 rounded-xl py-2 px-3">
+        <label for="enforceNativeAppUx" class="cursor-pointer flex gap-x-3">
+          <div class="grow">
+            <h3 class="flex items-center text-sm text-gray-800 font-semibold">
+              <?php esc_html_e( 'Enforce Native App UX', 'intasela-pwa' ); ?>
+              <button type="button" class="group/tooltip relative cursor-help ms-1 flex" tabindex="-1" data-dp-tooltip='{"trigger": "hover", "placement": "top"}'>
+                <svg class="inline-block size-3 text-gray-400" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"></path>
+                  <path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533L8.93 6.588zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0z"></path>
+                </svg>
+                <span class="dp-tooltip-content group-data-[shown=true]/tooltip:opacity-100 group-data-[shown=true]/tooltip:visible opacity-0 transition-opacity inline-block absolute w-max invisible max-w-xs sm:max-w-lg z-[99999999999999] text-center py-1 px-2 bg-gray-900 text-xs font-medium text-white rounded shadow-sm" role="tooltip">
+                  <?php esc_html_e( 'Strips away default browser behaviors (like text selection, image dragging, tap highlights, and rubber-banding) to make the PWA feel like a truly native mobile application.', 'intasela-pwa' ); ?>
+                </span>
+              </button>
+            </h3>
+            <p class="mt-0.5 text-xs text-gray-500">
+              <?php esc_html_e( 'Enforce native mobile app touch and scrolling behaviors.', 'intasela-pwa' ); ?>
+            </p>
+          </div>
+          <div class="flex justify-between items-center">
+            <div class="relative inline-block">
+              <input type="checkbox" id="enforceNativeAppUx" name="enforceNativeAppUx" class="relative w-11 h-6 !p-px bg-gray-100 !border-transparent !border text-transparent rounded-full cursor-pointer transition-colors ease-in-out duration-200 focus:ring-indigo-600 data-[disabled=true]:opacity-50 data-[disabled=true]:pointer-events-none checked:bg-none checked:text-indigo-600 checked:border-indigo-600 focus:checked:border-indigo-600 before:inline-block before:!size-5 before:bg-white checked:before:bg-white checked:before:m-0 before:translate-x-0 checked:before:translate-x-full before:rounded-full before:shadow before:transform before:ring-0 before:transition before:ease-in-out before:duration-200 text-start" <?php checked( Utils::getSetting( 'enforceNativeAppUx' ), 'on' ); ?>>
+            </div>
+          </div>
+        </label>
+      </div>
     </div>
   </fieldset>
   <!-- Refresh Interactions -->

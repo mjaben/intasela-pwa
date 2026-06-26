@@ -96,17 +96,14 @@ class FrontendComponents {
             ] );
             
             // Inject inline CSS and script to prevent page glimpse while pageLoader.js is being fetched
-            $bgColor = Utils::getSetting( 'backgroundColor' );
-            if ( empty( $bgColor ) ) {
-                $bgColor = '#ffffff';
-            }
-            wp_add_inline_script( 'intasela-pwa-page-loader', 
-                'var pwaInit = document.createElement("div");' .
-                'pwaInit.id = "intasela-pwa-initial-loader";' .
-                'pwaInit.style.cssText = "position:fixed;top:0;left:0;width:100vw;height:100vh;background-color:' . esc_js( $bgColor ) . ';z-index:9999999999999998;";' .
-                'document.documentElement.appendChild(pwaInit);',
-                'before'
-            );
+            // We use wp_head at priority 1 to ensure it runs as early as possible and is not deferred to footer
+            add_action('wp_head', function() {
+                $bgColor = Utils::getSetting( 'backgroundColor' );
+                if ( empty( $bgColor ) ) {
+                    $bgColor = '#ffffff';
+                }
+                echo '<script>var pwaInit = document.createElement("div"); pwaInit.id = "intasela-pwa-initial-loader"; pwaInit.style.cssText = "position:fixed;top:0;left:0;width:100vw;height:100vh;background-color:' . esc_js( $bgColor ) . ';z-index:9999999999999998;"; document.documentElement.appendChild(pwaInit);</script>';
+            }, 1);
         }
         // Toast Messages
         if ( Utils::getSetting( 'toastMessages' ) == 'on' ) {
@@ -134,6 +131,13 @@ class FrontendComponents {
                 'themeColor'          => Utils::getSetting( 'themeColor' ),
                 'shareButtonPosition' => Utils::getSetting( 'shareButtonPosition' ),
             ] );
+        }
+
+        // Enforce Native App UX
+        if ( Utils::getSetting( 'enforceNativeAppUx' ) == 'on' ) {
+            add_action('wp_head', function() {
+                echo '<style id="intasela-pwa-native-ux-style">html, body { overscroll-behavior-y: none; } a, button, input, [role="button"] { touch-action: manipulation; -webkit-tap-highlight-color: transparent; } a, button, img { user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; } img { -webkit-user-drag: none; }</style>';
+            }, 10);
         }
     }
 
