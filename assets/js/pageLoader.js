@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+(function () {
   if (!window.IntaselaPWAUADetector || !window.IntaselaPWAUADetector.isSupported) return;
 
   const pageLoaderJsVars = window['intasela_pwa_page_loader_js_vars'] || {};
@@ -7,10 +7,12 @@ document.addEventListener('DOMContentLoaded', function () {
     const temp = document.createElement('div');
     temp.style.backgroundColor = backgroundColor;
     temp.style.display = 'none';
-    document.body.appendChild(temp);
+    
+    const parent = document.body || document.documentElement;
+    parent.appendChild(temp);
 
     const computedColor = window.getComputedStyle(temp).backgroundColor;
-    document.body.removeChild(temp);
+    parent.removeChild(temp);
 
     const [r, g, b] = computedColor.match(/\d+/g).map(Number);
     const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
@@ -47,7 +49,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (!pageLoader) {
         pageLoader = document.createElement('intasela-pwa-page-loader');
-        document.body.appendChild(pageLoader);
+        const parent = document.body || document.documentElement;
+        parent.appendChild(pageLoader);
       }
 
       return pageLoader;
@@ -57,6 +60,34 @@ document.addEventListener('DOMContentLoaded', function () {
       // Show page loader immediately before navigation
       window.addEventListener('beforeunload', () => {
         this.showPageLoaderBeforeUnload();
+      });
+
+      // Handle link clicks for better UX on external links or normal page navigations
+      document.addEventListener('click', (e) => {
+        const link = e.target.closest('a');
+        if (!link) return;
+
+        // Give other click handlers (like SPA routers) a chance to prevent default
+        setTimeout(() => {
+          if (e.defaultPrevented) return;
+          
+          const href = link.getAttribute('href');
+          if (!href || href.startsWith('#') || href.startsWith('javascript:') || link.target === '_blank' || link.hasAttribute('download')) return;
+
+          try {
+            const currentUrl = new URL(window.location.href);
+            const linkUrl = new URL(link.href, window.location.href);
+            
+            // If it's just a hash change or identical URL, ignore
+            if (currentUrl.origin === linkUrl.origin && currentUrl.pathname === linkUrl.pathname && currentUrl.search === linkUrl.search) {
+               return; 
+            }
+            
+            this.showPageLoaderBeforeUnload();
+          } catch (err) {
+            // Ignore invalid URLs
+          }
+        }, 0);
       });
 
       // Handle initial page load
@@ -70,6 +101,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     initialShow() {
+      if (document.readyState === 'complete') return;
+
       const pageLoader = this.shadowRoot.querySelector('.pageLoader');
       if (pageLoader) {
         
@@ -113,6 +146,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     fadeOutPageLoader(pageLoader) {
+      if (!pageLoader.classList.contains('visible')) {
+        document.documentElement.style.removeProperty('overflow');
+        document.documentElement.style.paddingRight = '';
+        pageLoader.style.display = 'none';
+        return;
+      }
+
       // Force a reflow before removing the visible class
       pageLoader.offsetHeight;
 
@@ -498,4 +538,4 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   IntaselaPWAPageLoader.show();
-});
+})();

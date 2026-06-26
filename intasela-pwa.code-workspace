@@ -5,6 +5,9 @@
 		},
 		{
 			"path": "../fluent-community"
+		},
+		{
+			"path": "../fluent-community-pro"
 		}
 	],
 	"settings": {}
