@@ -2,7 +2,8 @@
   "require": {
     "matomo/device-detector": "^6.0",
     "chillerlan/php-qrcode": "^5.0",
-    "minishlink/web-push": "^7.0"
+    "minishlink/web-push": "^7.0",
+    "symfony/polyfill-mbstring": "^1.38"
   },
   "config": {
     "platform": {
