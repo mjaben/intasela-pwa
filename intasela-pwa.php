@@ -1,10 +1,10 @@
 <?php
 
 /*
-Plugin Name: Intasela_PWA
+Plugin Name: Intasela PWA
 Description: Empower your website with Progressive Web App (PWA) features and give it a true app-like experience with install prompts, offline access, push notifications, advanced UI components, powerful web capabilities, detailed analytics, & more.
 Plugin URI: Intasela.com
-Version: 1.0.6
+Version: 1.3.1
 Author: Intasela
 Author URI:
 License: GPLv3

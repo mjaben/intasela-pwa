@@ -5,7 +5,7 @@ Tags: pwa, progressive web app, mobile app, push notifications, native app
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.3.0
+Stable tag: 1.3.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -109,6 +109,9 @@ Intasela PWA is compatible with any device that supports modern browsers—inclu
 
 
 == Changelog ==
+= 1.3.1 =
+* Improvement: PWA page loader UX improvements
+
 = 1.3.0 =
 * Improvement: Code stability and compatibility with WordPress 7.0
 
