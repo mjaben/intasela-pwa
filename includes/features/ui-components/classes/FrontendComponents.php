@@ -94,6 +94,19 @@ class FrontendComponents {
                 'pageLoaderType'  => Utils::getSetting( 'pageLoaderType' ),
                 'hasActivePro'    => true,
             ] );
+            
+            // Inject inline CSS and script to prevent page glimpse while pageLoader.js is being fetched
+            $bgColor = Utils::getSetting( 'backgroundColor' );
+            if ( empty( $bgColor ) ) {
+                $bgColor = '#ffffff';
+            }
+            wp_add_inline_script( 'intasela-pwa-page-loader', 
+                'var pwaInit = document.createElement("div");' .
+                'pwaInit.id = "intasela-pwa-initial-loader";' .
+                'pwaInit.style.cssText = "position:fixed;top:0;left:0;width:100vw;height:100vh;background-color:' . esc_js( $bgColor ) . ';z-index:9999999999999998;";' .
+                'document.documentElement.appendChild(pwaInit);',
+                'before'
+            );
         }
         // Toast Messages
         if ( Utils::getSetting( 'toastMessages' ) == 'on' ) {

@@ -101,11 +101,16 @@
     }
 
     initialShow() {
-      if (document.readyState === 'complete') return;
+      const initBg = document.getElementById('intasela-pwa-initial-loader');
+
+      if (document.readyState === 'complete') {
+        if (initBg) initBg.remove();
+        return;
+      }
 
       const pageLoader = this.shadowRoot.querySelector('.pageLoader');
       if (pageLoader) {
-        
+        if (initBg) initBg.remove();
 
         document.documentElement.style.paddingRight = `${window.innerWidth - document.documentElement.offsetWidth}px`;
         document.documentElement.style.overflow = 'hidden';
@@ -129,6 +134,7 @@
         requestAnimationFrame(() => {
           document.documentElement.style.paddingRight = `${window.innerWidth - document.documentElement.offsetWidth}px`;
           document.documentElement.style.overflow = 'hidden';
+          pageLoader.classList.add('no-transition');
           pageLoader.classList.add('visible');
           
           this.startPercentAnimation();
