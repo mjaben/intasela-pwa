@@ -95,15 +95,26 @@ class FrontendComponents {
                 'hasActivePro'    => true,
             ] );
             
-            // Inject inline CSS and script to prevent page glimpse while pageLoader.js is being fetched
-            // We use wp_head at priority 1 to ensure it runs as early as possible and is not deferred to footer
+            // Inject inline CSS to prevent page glimpse while pageLoader.js is being fetched
+            // We use wp_head at priority -9999 to ensure it runs as the absolute first thing
             add_action('wp_head', function() {
                 $bgColor = Utils::getSetting( 'backgroundColor' );
                 if ( empty( $bgColor ) ) {
                     $bgColor = '#ffffff';
                 }
-                echo '<script>var pwaInit = document.createElement("div"); pwaInit.id = "intasela-pwa-initial-loader"; pwaInit.style.cssText = "position:fixed;top:0;left:0;width:100vw;height:100vh;background-color:' . esc_js( $bgColor ) . ';z-index:9999999999999998;"; document.documentElement.appendChild(pwaInit);</script>';
-            }, 1);
+                echo '<style id="intasela-pwa-initial-loader-style">
+                    html::before {
+                        content: "";
+                        position: fixed;
+                        top: 0; left: 0; width: 100vw; height: 100vh;
+                        background-color: ' . esc_attr( $bgColor ) . ' !important;
+                        z-index: 2147483647 !important;
+                    }
+                    html.intasela-pwa-loaded::before {
+                        display: none !important;
+                    }
+                </style>';
+            }, -9999);
         }
         // Toast Messages
         if ( Utils::getSetting( 'toastMessages' ) == 'on' ) {
